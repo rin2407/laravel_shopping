@@ -21,8 +21,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
+Route::get('/dashboard',function(){
+    return view('admin.home-admin.dashboard');
+});
 // admin
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Admin\LoginController@form_login')->name('login.form');
     Route::post('login', 'Admin\LoginController@login')->name('admin.login');
+    Route::get('/user-management',function(){
+        return view('admin.home-admin.user-management');
+    });
  });
