@@ -1,5 +1,16 @@
 {
+    "/js/admin/common.js": "/js/admin/common.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/common.js": "/js/common.js"
+    "/js/flot-data.js": "/js/flot-data.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/metisMenu.min.js": "/js/metisMenu.min.js",
+    "/js/morris-data.js": "/js/morris-data.js",
+    "/js/morris.min.js": "/js/morris.min.js",
+    "/js/startmin.js": "/js/startmin.js",
+    "/css/font-awesome.min.css": "/css/font-awesome.min.css",
+    "/css/metisMenu.min.css": "/css/metisMenu.min.css",
+    "/css/morris.css": "/css/morris.css",
+    "/css/startmin.css": "/css/startmin.css",
+    "/css/timeline.css": "/css/timeline.css"
 }

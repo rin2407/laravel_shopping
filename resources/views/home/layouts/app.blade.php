@@ -8,19 +8,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home/addStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home/responsive.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    @yield('css')
 </head>
 <body>
-    <div id="app">
+    {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -75,6 +77,18 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div> --}}
+    @include('home.layouts.header')
+    @yield('content')
+    @include('home.layouts.footer')
+    {{-- js --}}
+    <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/owl.carousel.min.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js "></script>
+    <script src="{{ asset('bootstrap/js/wow.min.js') }}"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=225776282171633&autoLogAppEvents=1"></script>
+    <script src="{{ asset('js/home/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/home/main.js') }}"></script>
+    @yield('javascript')
 </body>
 </html>
