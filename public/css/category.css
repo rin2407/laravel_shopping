@@ -1,0 +1,24 @@
+i.editCategory {
+    color: blue;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.deleteCategory {
+    color: crimson;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.panel .title {
+    font-weight: 600;
+    font-size: 20px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.sidebar ul li i {
+    padding-right: 10px;
+}
