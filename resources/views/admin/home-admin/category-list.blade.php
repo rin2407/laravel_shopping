@@ -2,6 +2,7 @@
 @section('css-admin')
 <link href="{{ asset('css/user-management/dataTables.bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('css/user-management/dataTables.responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('css/category.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div id="page-wrapper">
@@ -11,9 +12,9 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="row">
-                        <div class="col-md-6 panel-heading">Category List</div>
-                        <div class="col-md-6 panel-heading float-right">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                        <div class="col-md-6 panel-heading title">Category List</div>
+                        <div class="col-md-6 panel-heading text-right">
+                            <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#staticBackdrop">
                                 Add category
                               </button>
                               @include('admin.home-admin.modal.modal_add_category')
@@ -35,12 +36,13 @@
                                 <tbody>
                                     <?php $stt=1 ?>
                                     @foreach ($list_category as $ls_category)
-                                    <tr class="odd gradeX">
+                                    <tr class="odd gradeX text-center">
                                         <td>{{$stt++}}</td>
                                         <td>{{$ls_category->category_name}}</td>
                                         <td>{{$ls_category->created_at}}</td>
                                         <td>{{$ls_category->updated_at}}</td>
-                                        <td><i class="fa fa-pencil-square-o editCategory"></i>
+                                        <td>
+                                        <i class="fa fa-pencil-square-o editCategory"></i>
                                             @include('admin.home-admin.modal.modal_edit_category')
                                             <i class="fa fa-trash-o deleteCategory" data-categoryID="{{$ls_category->category_id}}"></i>
                                         </td>

@@ -2,15 +2,16 @@
 @section('css-admin')
 <link href="{{ asset('css/user-management/dataTables.bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('css/user-management/dataTables.responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('css/category.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 <div id="page-wrapper">
     <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12"  style="padding-top: 20px">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading title">
                         User List
                     </div>
                     <!-- /.panel-heading -->
