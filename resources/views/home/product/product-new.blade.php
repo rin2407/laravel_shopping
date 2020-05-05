@@ -26,7 +26,7 @@
                         </a>
                         <ul class="social">
                             <li><a href="{{route('product.show',['id'=>$p_new->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a data-tip="Thêm vào giỏ hàng" data-product_id="{{$p_new->product_id}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                         <span class="product-new-label">New</span>
                         <span class="product-discount-label">-10%</span>
