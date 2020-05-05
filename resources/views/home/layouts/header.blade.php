@@ -8,7 +8,7 @@
                             <a href=""> <i class="fas fa-phone-alt "></i> 02367.109.808</a>
                         </li>
                         <li>
-                            <a href=""> <i class="fas fa-envelope"></i> sparta.edu.vn@gmail.com</a>
+                            <a href=""> <i class="fas fa-envelope"></i> info.vn@gmail.com</a>
                         </li>
 
                     </ul>
@@ -63,7 +63,7 @@
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item shop">
-                                <a href="shopcart.html" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>Giỏ hàng</a>
+                                <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>Giỏ hàng</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Trang chủ<span class="sr-only">(current)</span></a>
