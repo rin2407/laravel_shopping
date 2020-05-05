@@ -16,9 +16,13 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
         if (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password], true)) {
-            echo "login thanh cong";
+            return redirect()->route('dashboard');
         }else{
             echo "login that bai";
         }
+    }
+    public function logout(){
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login');
     }
 }

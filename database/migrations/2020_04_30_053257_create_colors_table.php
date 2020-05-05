@@ -17,6 +17,7 @@ class CreateColorsTable extends Migration
             $table->bigIncrements('color_id');
             $table->string('color_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
