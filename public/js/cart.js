@@ -22,11 +22,24 @@ $(document).ready(function() {
                         toastr.success('Sản phẩm đã được thêm vào giỏ hàng thành công');
                         setTimeout(function() {
                             location.reload();
-                        }, 1000);
+                        }, 500);
                     }
                 }
             });
-        }, 300);
+        }, 1000);
 
+    });
+});
+$(document).ready(function() {
+    $('.count').prop('disabled', true);
+    $(document).on('click', '.inc', function() {
+        var quantity = parseInt($(this).prev().val() + 1);
+        alert(quantity);
+    });
+    $(document).on('click', '.dec', function() {
+        $(this).next().val(parseInt($(this).next().val()) - 1);
+        if ($(this).next().val() == 0) {
+            $(this).next().val(1);
+        }
     });
 });

@@ -39,9 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function cart(){
-        $this->hasOne('App\Cart','id','cart_id');
+        return $this->hasOne('App\Cart','id','cart_id');
     }
     public function order(){
-        $this->hasOne('App\Order','id','order_id');
+        return $this->hasOne('App\Order','id','order_id');
     }
 }

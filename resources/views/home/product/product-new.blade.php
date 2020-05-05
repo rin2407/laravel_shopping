@@ -37,7 +37,7 @@
                             {{number_format($p_new->promo_price)}}
                             <span>{{number_format($p_new->unit_price)}}</span>
                         </div>
-                        <a class="add-to-cart" href="">Thêm vào giỏ hàng</a>
+                        <a class="add-to-cart cart" data-product_id="{{$p_new->product_id}}">Thêm vào giỏ hàng</a>
                     </div>
                 </div>
             </div>
