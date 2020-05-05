@@ -25,6 +25,7 @@ Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
 Route::group(['prefix' => 'user'], function () {
     Route::post('/cart','CartController@store');
+    Route::get('/cart-detail','CartController@show')->name('cart.show');
 });
 // admin
 Route::group(['prefix' => 'admin'], function () {

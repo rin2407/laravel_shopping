@@ -140,18 +140,7 @@ $('#return-to-top').click(function() { // When arrow is clicked
 //     });
 // });
 
-$(document).ready(function() {
-    $('.count').prop('disabled', true);
-    $(document).on('click', '.inc', function() {
-        $(this).prev().val(parseInt($(this).prev().val()) + 1);
-    });
-    $(document).on('click', '.dec', function() {
-        $(this).next().val(parseInt($(this).next().val()) - 1);
-        if ($(this).next().val() == 0) {
-            $(this).next().val(1);
-        }
-    });
-});
+
 
 
 // $('.product-thumbs-track > .pt').on('click', function() {

@@ -98,7 +98,7 @@
                     </ul>
 
                 </div>
-                <a href="shopcart.html" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number">0</span> Giỏ hàng</a>
+            <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number">{{$total_cart_product}}</span> Giỏ hàng</a>
 <!--                 
                 <div class="shop-icon">
                     <a href="shopcart.html">

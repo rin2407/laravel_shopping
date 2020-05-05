@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('id')->references('id')->on('users');
             $table->integer('total_money');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

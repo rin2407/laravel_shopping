@@ -23,8 +23,8 @@
                         <img class="pic-2" src="{{asset('images/products/'.$p_sell->image_name)}}">
                     </a>
                     <ul class="social">
-                        <li><a href="#" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#" data-tip="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="{{route('product.show',['id'=>$p_sell->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
+                            <li><a data-tip="Thêm vào giỏ hàng" data-product_id="{{$p_sell->product_id}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                     <span class="product-new-label">New</span>
                     <span class="product-discount-label">-10%</span>
@@ -35,7 +35,7 @@
                         {{number_format($p_sell->promo_price)}}
                         <span>{{number_format($p_sell->unit_price)}}</span>
                     </div>
-                    <a class="add-to-cart" href="">Thêm vào giỏ hàng</a>
+                    <a class="add-to-cart cart" data-product_id="{{$p_sell->product_id}}">Thêm vào giỏ hàng</a>
                 </div>
             </div>
         </div>
