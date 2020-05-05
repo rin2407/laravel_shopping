@@ -43,24 +43,18 @@ class CartController extends Controller
         $user_id = Auth::User()->id;
         $check_cart = DB::table('cart_items')->join('carts', 'cart_items.cart_id', '=', 'carts.cart_id')
                      ->where('carts.id', $user_id)
-                      ->where('cart_items.product_id', $product_id)->get();
+                     ->where('cart_items.product_id', $product_id)->get();
     if (count($check_cart) == 1) {
         echo "yes";
     } else {
-        // $cart = new cart();
-        // $cart_item = new Cart_item();
-        // // add cart
-        // $cart->id = $user_id;
-        // $cart->save();
-        // // add cart_detail
-        // $cart_id = $cart->cart_id;
-        //     $cart_item->product_id = $product_id;
-        //     $cart_item->cart_id = $cart_id;
-        //     $cart_item->save();
-            echo "Thêm vào giỏ hàng thành công";
+        DB::table('carts')->insert(
+            ['id' =>$user_id]
+        );
+        $cart_id = DB::getPDO()->lastInsertId();
+        DB::table('cart_items')->insert(
+            ['product_id' =>$product_id,'cart_id'=>$cart_id,'quantity'=>1]
+        );
     }
-
-
     }
 
     /**
@@ -69,9 +63,13 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $user_id=Auth::User()->id;
+        $cart_detail=DB::table('carts')->join('cart_items','cart_items.cart_id','=','carts.cart_id')
+                                      ->join('products','cart_items.product_id','=','products.product_id')
+                                      ->where('carts.id',$user_id)->get();
+        return view('home.cart.cart-detail',['cart_detail'=>$cart_detail]);
     }
 
     /**
