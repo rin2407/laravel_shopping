@@ -18,6 +18,7 @@
     <link href="{{ asset('bootstrap/css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home/addStyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home/responsive.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     @yield('css')
 </head>
@@ -90,6 +91,8 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=225776282171633&autoLogAppEvents=1"></script>
     <script src="{{ asset('js/home/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/home/main.js') }}"></script>
+    <script src="{{ asset('js/cart.js') }}"></script>
+    <script src="{{asset('bootstrap/js/toastr.min.js')}}"></script>
     @yield('javascript')
 </body>
 </html>
