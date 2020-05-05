@@ -10,8 +10,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        User List
+                    <div class="row">
+                        <div class="col-md-6 panel-heading">Category List</div>
+                        <div class="col-md-6 panel-heading float-right">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                                Add category
+                              </button>
+                              @include('admin.home-admin.modal.modal_add_category')
+                        </div>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -19,26 +25,27 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
+                                        <th>STT</th>
                                         <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
+                                        <th>Create_at</th>
+                                        <th>Update_at</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($list_user as $ls_user)
+                                    <?php $stt=1 ?>
+                                    @foreach ($list_category as $ls_category)
                                     <tr class="odd gradeX">
-                                        <td>{{$ls_user->name}}</td>
-                                        <td>{{$ls_user->email}}</td>
-                                        <td>{{$ls_user->address}}</td>
-                                        <td>{{$ls_user->phone}}</td>
-                                        <td class="center">
-                                            <i class="fa fa-trash-o deleteUser" data-userid="{{$ls_user->id}}"></i>
-                                            {{-- <button class="btn btn-danger deleteUser" data-userid="{{$ls_user->id}}">Delete</button> --}}
+                                        <td>{{$stt++}}</td>
+                                        <td>{{$ls_category->category_name}}</td>
+                                        <td>{{$ls_category->created_at}}</td>
+                                        <td>{{$ls_category->updated_at}}</td>
+                                        <td><i class="fa fa-pencil-square-o editCategory"></i>
+                                            @include('admin.home-admin.modal.modal_edit_category')
+                                            <i class="fa fa-trash-o deleteCategory" data-categoryID="{{$ls_category->category_id}}"></i>
                                         </td>
                                     </tr>
-                                    @include('admin.home-admin.modal.modal_delete_user_confirm')
+                                    @include('admin.home-admin.modal.modal_delete_category_confirm')
                                     @endforeach
                                 </tbody>
                             </table>
@@ -62,10 +69,13 @@
     });
 </script>
 <script>
-    $(document).on('click','.deleteUser',function(){
-        var userID=$(this).attr('data-userid');
-        $('#user_id').val(userID); 
+    $(document).on('click','.deleteCategory',function(){
+        var category_id=$(this).attr('data-categoryID');
+        $('#category_id').val(category_id); 
         $('#applicantDeleteModal').modal('show'); 
+    });
+    $(document).on('click','.editCategory',function(){
+        $(this).next().modal('show'); 
     });
     </script>
 @endsection
