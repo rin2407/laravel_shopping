@@ -24,7 +24,7 @@ class add_ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|file|max:1024',
+            'image' => 'required|file',
             'product_name'=>'required|unique:products,product_name|min:1|max:64',
             'producer'=>'required',
             'category'=>'required',
