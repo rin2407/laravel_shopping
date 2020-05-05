@@ -80,7 +80,10 @@
                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Edie Product</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Edit Product</button>
+            </div>
+            
         <form>
     </div>
 </div>

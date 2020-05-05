@@ -164,3 +164,10 @@ $(document).ready(function() {
 //         $('.zoomImg').attr({ src: imgurl });
 //     }
 // });
+var accordion_item = $(".click");
+accordion_item.click(function() {
+    $(".click").not($(this)).each(function() {
+        $(this).removeClass("active");
+    });
+    $(this).toggleClass("active");
+});
