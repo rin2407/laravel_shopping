@@ -13,23 +13,30 @@
         <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
             @csrf
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Product name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="product_name" value="{{old('product_name')}}">
+                <div class="col-md-10 col-md-offset-1">
+                    
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Product name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name="product_name" value="{{old('product_name')}}">
                         @if($errors->has('product_name'))
                             <p style="color: red">{{$errors->first('product_name')}}</p>
                         @endif  
+                        </div>
+                        
                     </div>
-                      <div class="form-group">
-                          <label for="exampleFormControlInput1">Producer</label>
+                      <div class="form-group row">
+                          <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Producer</label>
+                          <div class="col-sm-10">
                           <input type="text" class="form-control" id="exampleFormControlInput1" name="producer" value={{old('producer')}}>
                           @if($errors->has('producer'))
                             <p style="color: red">{{$errors->first('producer')}}</p>
-                        @endif  
+                        @endif 
+                      </div> 
                      </div>
-                     <div class="form-group">
-                     <label for="exampleFormControlInput1">Category</label>
+                     <div class="form-group row">
+                     <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Category</label>
+                     <div class="col-sm-10">
                      <select class="form-control" name="category">
                         <option value="">-- Choose category</option>
                         @foreach ($list_category as $ls_category)
@@ -39,45 +46,61 @@
                       @if($errors->has('category'))
                             <p style="color: red">{{$errors->first('category')}}</p>
                         @endif  
+                     </div>
                     </div>
-                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Unit Price</label>
+                     <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Unit Price</label>
+                        <div class="col-sm-10">
                         <input type="number" class="form-control" id="exampleFormControlInput1" name="unit_price" onkeyup="this.value = FormatNumber(this.value);" value={{old('unit_price')}}>
                         @if($errors->has('unit_price'))
                             <p style="color: red">{{$errors->first('unit_price')}}</p>
                         @endif  
+                    </div>
                    </div>
-                   <div class="form-group">
-                    <label for="exampleFormControlInput1">Promo Price</label>
+                   <div class="form-group row">
+                    <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Promo Price</label>
+                    <div class="col-sm-10">
                     <input type="number" class="form-control" id="exampleFormControlInput1" name="promo_price" onkeyup="this.value = FormatNumber(this.value);">
                     <p style="color: red" class="price">Promotion price must be smaller than original price</p>
                     @if($errors->has('promo_price'))
                             <p style="color: red">{{$errors->first('promo_price')}}</p>
                         @endif  
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Amount</label>
+                </div>
+                    <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Amount</label>
+                        <div class="col-sm-10">
+                      
                         <input type="number" class="form-control" id="exampleFormControlInput1" name="amount" value={{old('amount')}}>
                         @if($errors->has('amount'))
                             <p style="color: red">{{$errors->first('amount')}}</p>
                         @endif  
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Description</label>
+                              
+                    </div>
+                        <div class="form-group row">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Description</label>
+                          <div class="col-sm-10">
                             <input type="text" class="form-control" id="exampleFormControlInput1" name="descripe" value={{old('descripe')}}>
                        </div>
-                       <div class="form-group">
-                        <label for="exampleFormControlInput1">Image</label>
+                    </div>
+                       <div class="form-group row">
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Image</label>
+                       <div class="col-sm-10">
                         <input id="ImageMedias" multiple="multiple" name="image" type="file"
                         accept=".jfif,.jpg,.jpeg,.png,.gif" class="custom-file-input"  value="">  
                         @if($errors->has('image'))
                             <p style="color: red">{{$errors->first('image')}}</p>
-                        @endif                                  
+                        @endif     
+                    </div>                             
                         <div id="divImageMediaPreview"></div>
                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Add Product</button>
+          <div class="text-center">
+           <button type="submit" class="btn btn-success">Add Product</button>
+          <a href="{{route('product.index')}}" type="submit" class="btn btn-primary">Return</a>
+          </div>
         <form>
     </div>
 </div>
