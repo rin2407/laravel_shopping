@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12"  style="padding-top: 20px">
+            <div class="col-lg-12" style="padding-top: 20px">
                 <div class="panel panel-default">
                     <div class="panel-heading title">
                         User List

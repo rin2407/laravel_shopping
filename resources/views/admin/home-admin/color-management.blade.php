@@ -9,16 +9,19 @@
     <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="padding-top: 20px">
                 <div class="panel panel-default">
-                    <div class="row">
-                        <div class="col-md-6 panel-heading title">Color List</div>
-                        <div class="col-md-6 panel-heading text-right">
+                    <div class="container-fluid">
+                    <div class="row panel-heading">
+                      
+                        <div class="col-md-6 title">Color List</div>
+                        <div class="col-md-6  text-right">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                                 Add color
                               </button>
                               @include('admin.home-admin.modal.modal_add_color')
                         </div>
+                    </div>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -36,7 +39,7 @@
                                 <tbody>
                                     <?php $stt=1 ?>
                                     @foreach ($list_color as $ls_color)
-                                    <tr class="odd gradeX">
+                                    <tr class="odd gradeX text-center">
                                         <td>{{$stt++}}</td>
                                         <td>{{$ls_color->color_name}}</td>
                                         <td>{{$ls_color->created_at}}</td>

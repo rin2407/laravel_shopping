@@ -5,7 +5,49 @@ i.editCategory {
     cursor: pointer;
 }
 
+i.editColor {
+    color: blue;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.editSize {
+    color: blue;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.editProduct {
+    color: blue;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.deleteProduct {
+    color: crimson;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.deleteSize {
+    color: crimson;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
 i.deleteCategory {
+    color: crimson;
+    font-size: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+i.deleteColor {
     color: crimson;
     font-size: 20px;
     padding-right: 10px;
@@ -21,4 +63,10 @@ i.deleteCategory {
 
 .sidebar ul li i {
     padding-right: 10px;
+}
+
+.panel-default .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
 }

@@ -2181,6 +2181,7 @@ h3.h3 {
 }
 
 .product-grid4 {
+    border: 1px solid #e5e5e5;
     font-family: Poppins, sans-serif;
     text-align: center;
     border-radius: 5px;
@@ -2336,6 +2337,10 @@ h3.h3 {
     transition: all .3s ease 0s
 }
 
+.product-grid4:hover img {
+    opacity: 0.5;
+}
+
 .product-grid4 .title a {
     color: #222
 }
@@ -2381,7 +2386,7 @@ h3.h3 {
 }
 
 .product-grid4 .add-to-cart:hover {
-    background-color: #505050;
+    background-color: #459ae5;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5)
 }
 
@@ -3314,7 +3319,7 @@ button.delete i {
     border: 1px solid #adb1c9;
     font-size: 14px;
     background-color: #adb1c9;
-    background-image: url('../images/searchicon.png');
+    background-image: url('../../images/searchicon.png');
     background-position: 8px 4px;
     background-repeat: no-repeat;
     background-size: 15px;
@@ -3328,4 +3333,74 @@ button.delete i {
 .header input[type=text]:focus {
     width: 100%;
     outline: none!important;
+}
+
+
+/* ================================================================ */
+
+.nav-tab a.nav-item {
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px 30px 10px;
+    position: relative;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+    padding: 14px 0 7px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-tab a.nav-item.active::before,
+.nav-tab a.nav-item.active::after {
+    opacity: 1;
+}
+
+.nav-tab a.nav-item::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background: #f9a134!important;
+    content: "";
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+}
+
+.nav-tab a.nav-item::after {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #f9a134!important;
+    top: 1px;
+    content: "";
+    height: 0px;
+    left: 0px;
+    margin: auto;
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+}
+
+.user {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #a9a9a93b;
+}
+
+.user .input-group-text {
+    background: #f9a134;
+    color: #fff;
+}
+
+.user .form-control {
+    border: 1px solid #f9a134;
+}
+
+.user .form-control:focus {
+    outline: none!important;
+    box-shadow: none!important;
 }

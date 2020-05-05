@@ -9,14 +9,18 @@
     <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12" style="padding-top: 20px">
                 <div class="panel panel-default">
-                    <div class="row">
-                        <div class="col-md-6 panel-heading title">Product List</div>
-                        <div class="col-md-6 panel-heading text-right">
+                    <div class="container-fluid">
+                    <div class="row panel-heading">
+                    
+                        <div class="col-md-6 title">Product List</div>
+                        <div class="col-md-6 text-right">
                             <a href="{{route('product.create')}}" type="submit" class="btn btn-primary">Add Product</a>
                         </div>
+                     
                     </div>
+                </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -38,7 +42,7 @@
                                 <tbody>
                                     <?php $stt=1 ?>
                                     @foreach ($list_product as $ls_product)
-                                    <tr class="odd gradeX">
+                                    <tr class="odd gradeX text-center">
                                         <td>{{$stt++}}</td>
                                         <td>{{$ls_product->product_name}}</td>
                                         <td>{{$ls_product->producer}}</td>
@@ -51,8 +55,8 @@
                                             <img src="{{ asset('images/products/'.$ls_product->image_name)}}" style="width:50px;height:30px" alt="">
                                         </td>
                                         <td>
-                                            <a href="{{route('product.edit',['id'=>$ls_product->product_id])}}"><i class="fa fa-pencil-square-o"></i></a>
-                                            <a  class="deleteProduct"><i class="fa fa-trash-o"></i></a>
+                                            <a href="{{route('product.edit',['id'=>$ls_product->product_id])}}" class="editProduct"><i class="fa fa-pencil-square-o editProduct"></i></a>
+                                            <a  class="deleteProduct"><i class="fa fa-trash-o deleteProduct"></i></a>
                                             @include('admin.home-admin.modal.modal_delete_product_confirm')
                                         </td>
                                     </tr>
