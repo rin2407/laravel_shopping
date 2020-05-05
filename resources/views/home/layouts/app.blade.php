@@ -83,6 +83,7 @@
     @include('home.layouts.footer')
     {{-- js --}}
     <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/owl.carousel.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js "></script>
     <script src="{{ asset('bootstrap/js/wow.min.js') }}"></script>

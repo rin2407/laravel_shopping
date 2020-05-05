@@ -10,7 +10,7 @@
         padding: 0!important;
     }
     .right {
-        display: none;
+        text-align: center;
     }
     a.login-button {
         display: none;
@@ -36,9 +36,9 @@
     .header ul.top-menu {
         padding: 0!important;
     }
-    .right {
+    /* .right {
         display: none;
-    }
+    } */
     a.login-button {
         display: none;
     }
