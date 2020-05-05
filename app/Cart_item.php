@@ -10,7 +10,7 @@ class Cart_item extends Model
     public function cart(){
         return $this->belongsTo('App\Cart','cart_id','cart_id');
     }
-    public function book(){
+    public function product(){
         return $this->belongsTo('App\Product','product_id','product_id');
     }
 

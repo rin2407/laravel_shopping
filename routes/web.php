@@ -23,8 +23,9 @@ Route::get('product/{id}','HomeController@show')->name('product.show');
 
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
-// Route::group(['prefix' => 'product'], function () {
-// });
+Route::group(['prefix' => 'user'], function () {
+    Route::post('/cart','CartController@store');
+});
 // admin
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/login', 'Admin\LoginController@form_login')->name('login.form');

@@ -28,8 +28,18 @@
                                     <i class="far fa-user-circle"></i>
                             </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Thông tin người dùng</a>
-                                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                                    @if (Auth::check())
+                                    <a class="dropdown-item">{{Auth::user()->name }}</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Đăng xuất</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    @else
+                                    <a class="dropdown-item" href="{{ route('login') }}">Đăng nhập</a>
+                                    <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
+                                    @endif
+                                    
 
                                 </div>
                         </li>
