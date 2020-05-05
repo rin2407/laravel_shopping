@@ -15,8 +15,9 @@ class CreateSizesTable extends Migration
     {
         Schema::create('sizes', function (Blueprint $table) {
             $table->bigIncrements('size_id');
-            $table->string('color_name');
+            $table->string('size_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

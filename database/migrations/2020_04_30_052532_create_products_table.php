@@ -20,9 +20,9 @@ class CreateProductsTable extends Migration
             $table->integer('promo_price');
             $table->string('producer');
             $table->integer('amount');
-            $table->string('vote');
-            $table->integer('view_count');
-            $table->string('describe',5000);
+            $table->string('vote')->nullable();
+            $table->integer('view_count')->default(0);
+            $table->string('describe')->nullable();
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('category_id')->on('categories');
             $table->timestamps();
