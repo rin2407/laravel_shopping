@@ -91,9 +91,16 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user_id = Auth::User()->id;
+        $quantity = $request->get('data_quantity');
+        $product_id = $request->get('data_product_id');
+         DB::table('cart_items')->join('carts', 'cart_items.cart_id', '=', 'carts.cart_id')
+                                                       ->join('products', 'cart_items.product_id', '=', 'products.product_id')
+                                                       ->where('carts.id', $user_id)
+                                                       ->where('cart_items.product_id', $product_id)
+                                                       ->update(array('quantity' => $quantity));
     }
 
     /**
@@ -102,8 +109,14 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $cart_id=$request->cart_id;
+        $user_id= Auth::User()->id;
+        DB::table('cart_items')->join('products', 'cart_items.product_id', '=', 'products.product_id')
+                                                    ->where('cart_items.cart_id',$cart_id)
+                                                    ->delete();
+        DB::table('carts')->where('cart_id', $cart_id)->delete();
+        return redirect()->route('cart.show');
     }
 }
