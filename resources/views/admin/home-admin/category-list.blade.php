@@ -9,16 +9,20 @@
     <div class="container-fluid">
         <!-- /.row -->
         <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="row">
-                        <div class="col-md-6 panel-heading title">Category List</div>
-                        <div class="col-md-6 panel-heading text-right">
+            <div class="col-lg-12" style="padding-top: 20px">
+                <div class="panel panel-default" >
+                    <div class="container-fluid">
+                    <div class="row panel-heading">
+                    
+                        <div class="col-md-6 title">Category List</div>
+                        <div class="col-md-6 text-right">
                             <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#staticBackdrop">
                                 Add category
                               </button>
                               @include('admin.home-admin.modal.modal_add_category')
-                        </div>
+                       
+                    </div>
+                </div>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">

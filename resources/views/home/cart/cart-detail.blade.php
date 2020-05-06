@@ -7,7 +7,8 @@
                 <div class="cart-table">
                     <h3>Your Cart</h3>
                     <div class="cart-table-warp" tabindex="1" style="overflow: hidden; outline: none;">
-                        <table>
+                       <div class="table-responsive">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th class="product-th">Product</th>
@@ -23,7 +24,7 @@
                                 @foreach ($cart_detail as $c_detail)
                                 <tr>
                                     <td class="product-col">
-                                        <img src="images/blog-image-4.jpg" alt="">
+                                        <img src="{{asset('images/products/'.$c_detail->image_name)}}" alt="">
                                         <div class="pc-title">
                                             <h4>{{$c_detail->product_name}}</h4>
                                             <p>{{number_format($c_detail->promo_price)}}</p>
@@ -61,6 +62,7 @@
                         </table>
                     </div>
                 </div>
+                </div>
             </div>
             <div class="col-lg-4 card-right">
                 <div class="cart-table-2">
@@ -76,12 +78,18 @@
                                 <td>{{number_format($total_money)." ₫"}}</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </tab
                     @if (count($cart_detail) > 0)
                       <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">Proceed to checkout</a>
                     @endif
                 </div>
                 <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Continue shopping</a>
+
+                    <a href="" class="site-btn">Kiểm tra đơn hàng</a>
+
+                </div>
+
+                <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Tiếp tục mua hàng</a>
             </div>
         </div>
     </div>
