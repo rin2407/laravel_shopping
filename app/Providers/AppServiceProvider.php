@@ -11,6 +11,7 @@ use App\Cart;
 use App\Cart_item;
 use App\Product;
 use App\Category;
+use Validator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,6 +31,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Validator::extend('phone',function($attribute, $value, $parameters, $valaliidator){
+            return preg_match('/^(0[578]|09|03)[0-9]{8}$/',$value);
+        });
         view()->composer('home.layouts.header',function($view){
             $category=Category::all();
             if(Auth::check()){

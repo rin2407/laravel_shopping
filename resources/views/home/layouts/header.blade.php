@@ -66,7 +66,7 @@
                                 <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>Giỏ hàng</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Trang chủ<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('home')}}">Trang chủ<span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item dropdown dmenu">
@@ -99,14 +99,6 @@
 
                 </div>
             <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number">{{$total_cart_product}}</span> Giỏ hàng</a>
-<!--                 
-                <div class="shop-icon">
-                    <a href="shopcart.html">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-number">0</span>
-                    </a>
-
-                </div> -->
             </nav>
         </div>
     </div>

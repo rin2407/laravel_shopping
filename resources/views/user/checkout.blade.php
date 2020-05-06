@@ -4,12 +4,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 order-2 order-lg-1">
-                <form class="checkout-form" action={{route('checkout.update',['id'=>$user->id])}} method="POST">
+                <form class="checkout-form" action={{route('checkout.update')}} method="POST">
+                    @csrf
                     <div class="cf-title">Billing Address</div>
                     <div class="row address-inputs">
                         <div class="col-md-12">
                             <input type="text" placeholder="Address" name="address" value={{$user->address}}>
+                            @if($errors->has('address'))
+                             <p style="color: red">{{$errors->first('address')}}</p>
+                            @endif
                             <input type="text" placeholder="Phone" name="phone" value={{$user->phone}}>
+                            @if($errors->has('phone'))
+                           <p style="color: red">{{$errors->first('phone')}}</p>
+                            @endif
                         </div>
                     </div>
                     <button class="site-btn submit-order-btn">Đặt Hàng</button>

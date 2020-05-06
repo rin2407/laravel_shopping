@@ -30,5 +30,11 @@ class DatabaseSeeder extends Seeder
                 ['category_name'=>'jacket'],
                 ['category_name'=>'jeans'],                                            
             ]);
+            DB::table('status_orders')->insert([
+                ['status_order_name'=>'Awaiting confirmation'],  
+                ['status_order_name'=>'Confirm'],  
+                ['status_order_name'=>'Being delivered'],  
+                ['status_order_name'=>'Delivered'],  
+            ]);
     }
 }
