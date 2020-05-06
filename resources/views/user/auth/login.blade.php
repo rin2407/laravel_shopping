@@ -4,21 +4,24 @@
 <div class="user">
 <div class="container">
     <div class="row justify-content-center login">
+
         <div class="col-md-6">
-            <nav>
-                <div class="nav nav-tab justify-content-center" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active click " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
-                  <a class="nav-item nav-link click" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Register</a>
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> <div class="card">
-                   
+            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active click" data-toggle="tab" href="#home">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#menu1">Đăng kí</a>
+                </li>
+               
+              </ul>
+            
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div id="home" class="container tab-pane active">
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-    
-                          
                                 <div class="form-group col-auto">
                                     <label class="sr-only" for="email">{{ __('E-Mail Address') }}</label>
                                     <div class="input-group mb-2">
@@ -32,7 +35,7 @@
                                         </span>
                                     @enderror
                                     </div>
-                                  </div>
+                                </div>
                                
                             <div class="form-group col-auto">
                                 <label class="sr-only" for="password">{{ __('Password') }}</label>
@@ -49,7 +52,7 @@
                                 </div>
                               </div>
                             
-                        </div>
+                        
                             <div class="form-group col-auto">
                                 <div class="text-center">
                                     <div class="form-check">
@@ -81,12 +84,12 @@
                                 </a>
                             @endif
                            </div>
+                            </div>
                         </form>
                     </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"> <div class="card">
                    
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -164,13 +167,16 @@
                             
                         </form>
                     </div>
-                </div></div>
+                </div>
+               </div>
                
-       </div>
+              </div>
+            </div>
+            
+          
     </div>
     </div>
   
 </div>
-</div>
-</div>
+    </div>
 @endsection
