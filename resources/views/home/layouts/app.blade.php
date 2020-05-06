@@ -19,6 +19,7 @@
     <link href="{{ asset('css/home/addStyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home/responsive.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/cart.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     @yield('css')
 </head>
