@@ -19,6 +19,7 @@
                             </thead>
                             <tbody>
                                 <?php $total_money=0 ?>
+                                @if (count($cart_detail)>0)
                                 @foreach ($cart_detail as $c_detail)
                                 <tr>
                                     <td class="product-col">
@@ -31,27 +32,31 @@
                                     <td class="quy-col">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <span class="dec qtybtn">-</span>
-                                                <input type="text" value="{{$c_detail->quantity}}" class="count">
-                                                <span class="inc qtybtn">+</span></div>
+                                                <span class="dec qtybtn" data-amount-dec="{{$c_detail->amount}}" data-product-id="{{$c_detail->product_id}}">-</span>
+                                                <input type="text" value="{{$c_detail->quantity}}" class="count" min="1">
+                                                <span class="inc qtybtn" data-amount-inc="{{$c_detail->amount}}" data-product-id="{{$c_detail->product_id}}">+</span></div>
                                         </div>
                                     </td>
                                     <td class="size-col">
                                         <h4>Size M</h4>
                                     </td>
                                     <td class="total-col">
-                                        <h4>{{number_format($c_detail->promo_price)." ₫"}}</h4>
+                                        <h4>{{number_format($c_detail->promo_price * $c_detail->quantity)." ₫"}}</h4>
                                     </td>
                                     <td class="action-col">
-                                        <form action="">
                                             <button class="delete">
                                                 <h4><i class="far fa-trash-alt"></i></h4>
                                             </button>
-                                        </form>
+                                            @include('home.cart.modal-delete-cart')
                                     </td>
                                 </tr>
                                 <?php $total_money+= ($c_detail->promo_price) * ($c_detail->quantity) ?>
                                 @endforeach
+                                @else
+                                <tr>
+                                    <td colspan="5">Your cart is empty.</td>
+                                </tr>
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -72,13 +77,20 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="" class="site-btn">Proceed to checkout</a>
-
+                    @if (count($cart_detail) > 0)
+                      <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">Proceed to checkout</a>
+                    @endif
                 </div>
-
                 <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Continue shopping</a>
             </div>
         </div>
     </div>
 </section>
+@endsection
+@section('javascript')
+    <script>
+        $(document).on('click','.delete',function(){
+        $(this).next().modal('show'); 
+    });
+    </script>
 @endsection

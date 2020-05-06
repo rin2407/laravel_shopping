@@ -26,6 +26,10 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 Route::group(['prefix' => 'user'], function () {
     Route::post('/cart','CartController@store');
     Route::get('/cart-detail','CartController@show')->name('cart.show');
+    Route::post('/cart/quantity-inc','CartController@update')->name('cart.update');
+    Route::delete('/cart/cart-delete','CartController@destroy')->name('cart.destroy');
+    Route::get('/checkout/{id}','UserCheckoutController@edit')->name('checkout.edit');
+    Route::post('/checkout/{id}','UserCheckoutController@update')->name('checkout.update');
 });
 // admin
 Route::group(['prefix' => 'admin'], function () {
