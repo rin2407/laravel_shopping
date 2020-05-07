@@ -2,16 +2,11 @@
 @section('content')
 <div class="slide-main">
     <div class="owl1 owl-carousel owl-theme">
+        @foreach ($list_banner as $ls_banner)
         <div class="item">
-
-            <img src="{{asset('images/bg-2.jpg')}}" width="100%">
-
+            <img src="{{asset('images/banners/'.$ls_banner->image_banner)}}" width="100%">
         </div>
-        <div class="item">
-            <img src="{{asset('images/bg-2.jpg')}}" width="100%">
-
-        </div>
-
+        @endforeach
     </div>
 </div>
 <div class="block-style-3">

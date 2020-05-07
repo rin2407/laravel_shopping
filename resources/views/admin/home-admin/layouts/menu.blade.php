@@ -35,7 +35,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="{{route('banner.index')}}"><i class="fa fa-edit fa-fw"></i>Banner Management</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
