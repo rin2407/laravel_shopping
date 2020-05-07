@@ -38,8 +38,12 @@ class HomeController extends Controller
                       ->join('image_products','image_products.product_id','products.product_id')
                       ->orderByDesc('products.view_count')
                       ->whereNull('products.deleted_at')
-                      ->paginate(8);;
-             return view('home.home',['product_new'=>$product_new,'product_sell'=>$product_sell]);
+                      ->paginate(8);
+        $list_post=DB::table('posts')
+                      ->join('post_details','post_details.post_id','posts.post_id')
+                      ->whereNull('posts.deleted_at')
+                      ->get();
+             return view('home.home',['product_new'=>$product_new,'product_sell'=>$product_sell,'list_post'=>$list_post]);
     }
     public function show($id){
         $product_detail= DB::table('products')
