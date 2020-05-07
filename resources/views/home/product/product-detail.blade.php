@@ -124,56 +124,52 @@
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <div class="reviews">
                             <h5>Đánh giá của bạn</h5>
-                            <form>
+                            <form action={{route('feedback.store')}} method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Địa chỉ email</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    @if (Auth::check())
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{ Auth::user()->email}}" disabled>
+                                    @else
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+                                    @endif
                                 </div>
-
+                                <input type="hidden" class="form-control" name="product_id" id="exampleFormControlInput1" value="{{$p_detail->product_id}}">
+                                @if (Auth::check())
+                                <input type="hidden" class="form-control" name="user_id" id="exampleFormControlInput1" value="{{Auth::User()->id}}">     
+                                @endif
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Đánh giá của bạn</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
                                 </div>
-                                <a href="" class="btn btn-primary">Bình luận</a>
+                                <button type="submit" class="btn btn-primary">Bình luận</button>
                             </form>
                         </div>
-                        <div class="reviews">
-                            <div class="row blockquote review-item">
-                                <div class="col-md-3 text-center">
-                                    <img class="rounded-circle reviewer" src="http://standaloneinstaller.com/upload/avatar.png">
-                                    <div class="caption">
-                                        <small>by <a href="#joe">Joe</a></small>
+                        @if (count($list_comment)>0)
+                            @foreach ($list_comment as $ls_comment)
+                            <div class="reviews">
+                                <div class="row blockquote review-item">
+                                    <div class="col-md-3 text-center">
+                                        <img class="rounded-circle reviewer" src="http://standaloneinstaller.com/upload/avatar.png">
+                                        <div class="caption">
+                                            <small>by <a href="#joe"> {{$ls_comment->name}}</a></small>
+                                        </div>
+    
                                     </div>
-
-                                </div>
-                                <div class="col-md-9">
-                                    <h4>My awesome review</h4>
-                                    <div class="ratebox text-center" data-id="0" data-rating="5"></div>
-                                    <p class="review-text">My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. </p>
-
-                                    <small class="review-date">March 26, 2017</small>
+                                    <div class="col-md-9">
+                                        <h4>{{$ls_comment->name}}</h4>
+                                        <div class="ratebox text-center" data-id="0" data-rating="5"></div>
+                                        <p class="review-text">{{$ls_comment->feedback_comment}}</p>
+    
+                                        <small class="review-date">{{$ls_comment->created_at}}</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="reviews">
-                            <div class="row blockquote review-item">
-                                <div class="col-md-3 text-center">
-                                    <img class="rounded-circle reviewer" src="http://standaloneinstaller.com/upload/avatar.png">
-                                    <div class="caption">
-                                        <small>by <a href="#joe">Joe</a></small>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-9">
-                                    <h4>My awesome review</h4>
-                                    <div class="ratebox text-center" data-id="0" data-rating="5"></div>
-                                    <p class="review-text">My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. My awesome review. </p>
-
-                                    <small class="review-date">March 26, 2017</small>
-                                </div>
-                            </div>
-                        </div>
-
+                            @endforeach
+                        @else
+                            
+                        @endif
+                       
                     </div>
                 </div>
             </div>
