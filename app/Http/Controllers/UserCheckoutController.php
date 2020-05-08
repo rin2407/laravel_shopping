@@ -48,6 +48,18 @@ class UserCheckoutController extends Controller
             $order_item->quantity = $c_item->quantity;
             $order_item->save();
         }
+        return $this->update_amount_product();
+    }
+    public function update_amount_product(){
+        $user_id= Auth::user()->id;
+        $list_cart_item=DB::table('cart_items')->join('carts', 'cart_items.cart_id', '=', 'carts.cart_id')
+        ->join('products', 'cart_items.product_id', '=', 'products.product_id')
+        ->where('carts.id', $user_id)
+        ->get();
+        foreach ($list_cart_item as $ls_item){
+            DB::table('products')->where('products.product_id',$ls_item->product_id)
+                                 ->update(array('amount'=>($ls_item->amount-$ls_item->quantity)));
+        }
         return $this->delete_cart();
     }
     public function delete_cart(){

@@ -8,6 +8,7 @@ use App\Product;
 use App\Category;
 use App\Image_product;
 use App\Banner;
+use App\Size;
 class HomeController extends Controller
 {
     /**
@@ -65,5 +66,16 @@ class HomeController extends Controller
                           ->join('image_products','image_products.product_id','products.product_id')
                           ->where('products.category_id','=',$product_detail->category_id)->get();
         return view('home.product.product-detail',['p_detail'=>$product_detail,'p_relate'=>$product_relate,'list_comment'=>$list_comment]);
+    }
+    public function all(){
+        $product_all=DB::table('products')
+                      ->join('categories','products.category_id','categories.category_id')
+                      ->join('image_products','image_products.product_id','products.product_id')
+                      ->orderByDesc('products.product_id')
+                      ->whereNull('products.deleted_at')
+                      ->get();
+        $category_all= Category::all();
+        $size_all=Size::all();
+        return view('home.product.product-all',['product_all'=>$product_all,'category_all'=>$category_all,'size_all'=>$size_all]);
     }
 }

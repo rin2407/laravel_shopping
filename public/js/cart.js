@@ -9,9 +9,10 @@ $(document).ready(function() {
             }
         });
         var _token = $('meta[name="csrf_token"]').attr('content');
+        var origin = window.location.origin;
         timeout = setTimeout(function() {
             $.ajax({
-                url: "http://127.0.0.1:8000/user/cart",
+                url: origin + "/user/cart",
                 type: "post",
                 data: { data_product_id: product_id, data_token: _token },
                 asyno: true,
@@ -39,6 +40,7 @@ $(document).ready(function() {
         $(this).prev().val(parseInt($(this).prev().val()) + 1);
         var amount_inc = $(this).attr("data-amount-inc");
         var product_id = $(this).attr("data-product-id");
+        var origin = window.location.origin;
         if (quantity_inc > amount_inc) {
             $(this).prev().val(amount_inc);
             toastr.error('Exceeding the quantity of products in stock');
@@ -51,7 +53,7 @@ $(document).ready(function() {
             var _token = $('meta[name="csrf_token"]').attr('content');
             timeout = setTimeout(function() {
                 $.ajax({
-                    url: "http://127.0.0.1:8000/user/cart/quantity-inc",
+                    url: origin + "/user/cart/quantity-inc",
                     type: "post",
                     data: { data_quantity: quantity_inc, data_amount: amount_inc, data_product_id: product_id, data_token: _token },
                     asyno: true,
@@ -72,6 +74,7 @@ $(document).ready(function() {
             $(this).next().val(parseInt($(this).next().val()) - 1);
             var amount_dec = $(this).attr("data-amount-dec");
             var product_id = $(this).attr("data-product-id");
+            var origin = window.location.origin;
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -80,7 +83,7 @@ $(document).ready(function() {
             var _token = $('meta[name="csrf_token"]').attr('content');
             timeout = setTimeout(function() {
                 $.ajax({
-                    url: "http://127.0.0.1:8000/user/cart/quantity-inc",
+                    url: origin + "/user/cart/quantity-inc",
                     type: "post",
                     data: { data_quantity: quantity_dec, data_amount: amount_dec, data_product_id: product_id, data_token: _token },
                     asyno: true,

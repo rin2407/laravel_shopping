@@ -8,8 +8,9 @@ $(document).ready(function() {
             }
         });
         var _token = $('meta[name="csrf_token"]').attr('content');
+        var origin = window.location.origin;
         $.ajax({
-            url: "http://127.0.0.1:8000/admin/banner/banner-action",
+            url: origin + "/admin/banner/banner-action",
             type: "post",
             data: { data_banner: banner, data_id_banner: id_banner, data_token: _token },
             asyno: true,
