@@ -41,6 +41,18 @@ class PostController extends Controller
         $post_detail->save();
         return redirect()->route('post.index');
     }
+    public function edit($id){
+        $post_edit=DB::table('posts')
+        ->join('post_details','post_details.post_id','posts.post_id')
+        ->where('posts.post_id',$id)
+        ->whereNull('posts.deleted_at')
+        ->first();
+        return view('admin.home-admin.post.post-edit',['post_edit'=>$post_edit]);
+    }
+    public function update($id){
+        
+
+    }
     public function destroy(Request $request){
         $id=$request->post_id;
         try {
