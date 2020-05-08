@@ -75,7 +75,7 @@
                         <input type="text" value="1" class="count">
                         <span class="inc qtybtn">+</span></div>
                 </div>
-                <a href="#" class="site-btn">Thêm vào giỏ hàng</a>
+                <a  class="site-btn cart" data-product_id="{{$p_detail->product_id}}">Thêm vào giỏ hàng</a>
 
             </div>
         </div>
@@ -187,7 +187,7 @@
                         </h1>
                     </div>
                     <div class="right-part">
-                        <a class=" button-one" href="# ">Xem tất cả</a>
+                        <a class=" button-one" href="{{route('product.all')}}">Xem tất cả</a>
                     </div>
                 </div>
             </div>
@@ -205,18 +205,18 @@
                             </a>
                             <ul class="social">
                                 <li><a href="{{route('product.show',['id'=>$relate->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="#" data-tip="Thêm vào giỏ hàng"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a class="cart" data-tip="Thêm vào giỏ hàng" data-product_id="{{$relate->product_id}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                             <span class="product-new-label">New</span>
-                            <span class="product-discount-label">-10%</span>
+                            <span class="product-discount-label">-{{(round(100*($relate->unit_price-$relate->promo_price)/$relate->unit_price)) }}%</span>
                         </div>
                         <div class="product-content">
                             <h3 class="title"><a href="#">{{$relate->product_name}}</a></h3>
                             <div class="price">
-                                {{number_format($relate->promo_price)}}
-                                <span>{{number_format($relate->unit_price)}}</span>
+                                {{number_format($relate->promo_price)}}<sup>đ</sup>
+                                <span>{{number_format($relate->unit_price)}}<sup>đ</sup></span>
                             </div>
-                            <a class="add-to-cart" href="">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart cart" data-product_id="{{$relate->product_id}}">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>

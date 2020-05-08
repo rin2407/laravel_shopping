@@ -16,9 +16,9 @@
                     
                         <div class="col-md-6 title">Post List</div>
                         <div class="col-md-6 text-right">
-                            <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#staticBackdrop">
+                            <a  href="{{ route('post.create')}}"type="button" class="btn btn-primary mr-2">
                                 Add Post
-                              </button>                       
+                            </a>                       
                     </div>
                 </div>
                     </div>

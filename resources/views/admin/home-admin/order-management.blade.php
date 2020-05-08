@@ -13,51 +13,50 @@
                 <div class="panel panel-default">
                     <div class="container-fluid">
                     <div class="row panel-heading">
-                    
-                        <div class="col-md-6 title">Product List</div>
-                        <div class="col-md-6 text-right">
-                            <a href="{{route('product.create')}}" type="submit" class="btn btn-primary">Add Product</a>
-                        </div>
-                     
+                      
+                        <div class="col-md-6 title">Order List</div>
                     </div>
-                </div>
+                    </div>
                     <!-- /.panel-heading -->
+                    
                     <div class="panel-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Product Name</th>
-                                        <th>Producer</th>
-                                        <th>Category name</th>
-                                        <th>Unit price</th>
-                                        <th>Promo price</th>
-                                        <th>Amount</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
+                                        <th>User name</th>
+                                        <th>Address</th>
+                                        <th>Phone</th>
+                                        <th>Total money</th>
+                                        <th>Status order</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $stt=1 ?>
-                                    @foreach ($list_product as $ls_product)
+                                    @foreach ($list_order as $ls_order)
                                     <tr class="odd gradeX text-center">
                                         <td>{{$stt++}}</td>
-                                        <td>{{$ls_product->product_name}}</td>
-                                        <td>{{$ls_product->producer}}</td>
-                                        <td>{{$ls_product->category_name}}</td>
-                                        <td>{{$ls_product->unit_price}}<sup>đ</sup></td>
-                                        <td>{{$ls_product->promo_price}}<sup>đ</sup></td>
-                                        <td>{{$ls_product->amount}}</td>
-                                        <td>{{$ls_product->describe}}</td>
+                                        <td>{{$ls_order->name}}</td>
+                                        <td>{{$ls_order->address}}</td>
+                                        <td>{{$ls_order->phone}}</td>
+                                        <td>{{number_format($ls_order->total_money)}}<sup>đ</sup></td>
                                         <td>
-                                            <img src="{{ asset('images/products/'.$ls_product->image_name)}}" style="width:50px;height:30px" alt="">
+                                            <select class="order" data-idOrder="{{$ls_order->order_id}}">
+                                                @foreach($list_status as $ls_status)
+                                                @if( $ls_order->status_order_id == $ls_status->status_order_id )
+                                                    <option value="{{ $ls_order->status_order_id }}"
+                                                            selected="true">{{ $ls_order->status_order_name }}</option>
+                                                @else
+                                                    <option
+                                                        value="{{ $ls_status->status_order_id }}">{{ $ls_status->status_order_name }}</option>
+                                                @endif
+                                            @endforeach
+                                            </select>
                                         </td>
-                                        <td>
-                                            <a href="{{route('product.edit',['id'=>$ls_product->product_id])}}" class="editProduct"><i class="fa fa-pencil-square-o editProduct"></i></a>
-                                            <a  class="deleteProduct"><i class="fa fa-trash-o deleteProduct"></i></a>
-                                            @include('admin.home-admin.modal.modal_delete_product_confirm')
+                                        <td><i class="fa fa fa-eye orderDetail"></i>
+                                            @include('admin.home-admin.modal.modal_order_detail')
                                         </td>
                                     </tr>
                                     @endforeach
@@ -75,6 +74,7 @@
 <script src="{{ asset('js/user-management/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/user-management/dataTables.bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/startmin.js') }}"></script>
+<script src="{{ asset('js/order.js') }}"></script>
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -83,7 +83,10 @@
     });
 </script>
 <script>
-    $(document).on('click','.deleteProduct',function(){
+    $(document).on('click','.orderDetail',function(){
+        $(this).next().modal('show'); 
+    });
+    $(document).on('click','.editColor',function(){
         $(this).next().modal('show'); 
     });
     </script>

@@ -69,26 +69,14 @@
                             <a class="nav-link" href="{{ route('home')}}">Trang chủ<span class="sr-only">(current)</span></a>
                         </li>
 
-                        <li class="nav-item dropdown dmenu">
-                            <a class="nav-link " href="aboutus.html" id="navbardrop" data-toggle="dropdown">
-                           Sản phẩm<i class="fa fa-angle-down"></i>
-                        </a>
-                            <div class="dropdown-menu sm-menu">
-                                <a class="dropdown-item" href="course.html">Sản phảm 1</a>
-                                <a class="dropdown-item" href="course.html">Sản phảm 2</a>
-
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product.all')}}">
+                           Sản phẩm</a>
                         </li>
-                        <li class="nav-item dropdown dmenu">
-                            <a class="nav-link " href="new.html" id="navbardrop" data-toggle="dropdown">
-                          Tin tức<i class="fa fa-angle-down"></i>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{ route('post.all')}}">
+                          Tin tức
                         </a>
-                            <div class="dropdown-menu sm-menu">
-                                <a class="dropdown-item" href="new.html">Tin tức giáo dục</a>
-                                <a class="dropdown-item" href="new.html">Tin tức Sparta</a>
-                                <a class="dropdown-item" href="new.html">Chia sẻ kinh nghiệm</a>
-
-                            </div>
                         </li>
 
 

@@ -8,7 +8,7 @@
                     </h1>
                 </div>
                 <div class="right-part">
-                    <a class=" button-one" href="# ">Xem tất cả</a>
+                    <a class=" button-one" href="{{route('product.all')}}">Xem tất cả</a>
                 </div>
             </div>
         </div>
@@ -27,13 +27,13 @@
                             <li><a data-tip="Thêm vào giỏ hàng" data-product_id="{{$p_sell->product_id}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                     <span class="product-new-label">New</span>
-                    <span class="product-discount-label">-10%</span>
+                    <span class="product-discount-label">-{{(round(100*($p_sell->unit_price-$p_sell->promo_price)/$p_sell->unit_price)) }}%</span>
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#">{{$p_sell->product_name}}</a></h3>
                     <div class="price">
-                        {{number_format($p_sell->promo_price)}}
-                        <span>{{number_format($p_sell->unit_price)}}</span>
+                        {{number_format($p_sell->promo_price)}}<sup>đ</sup>
+                        <span>{{number_format($p_sell->unit_price)}}<sup>đ</sup></span>
                     </div>
                     <a class="add-to-cart cart" data-product_id="{{$p_sell->product_id}}">Thêm vào giỏ hàng</a>
                 </div>
