@@ -48,7 +48,7 @@
                                         <td>{{$ls_post->created_at}}</td>
                                         <td>{{$ls_post->updated_at}}</td>
                                         <td>
-                                        <i class="fa fa-pencil-square-o editCategory"></i>
+                                        <a href="{{route('post.edit',['id'=>$ls_post->post_id])}}"><i class="fa fa-pencil-square-o editCategory"></i></a>
                                         <i class="fa fa-trash-o deletePost"></i>
                                             @include('admin.home-admin.modal.modal_delete_post_confirm')
                                         </td>

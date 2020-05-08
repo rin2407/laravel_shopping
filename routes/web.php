@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 //user
 Auth::routes();
+Route::get('/contact',function(){
+    return view('home.contact');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('product/{id}','HomeController@show')->name('product.show');
 Route::get('/home/product-all','HomeController@all')->name('product.all');
@@ -35,9 +39,9 @@ Route::group(['prefix' => 'user','middleware'=>'auth'], function () {
     Route::post('/feedback','FeedbackController@store')->name('feedback.store');
 });
 // admin
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/login', 'Admin\LoginController@form_login')->name('login.form');
-    Route::post('/login', 'Admin\LoginController@login')->name('admin.login');
+Route::get('admin/login', 'Admin\LoginController@form_login')->name('login.form');
+Route::post('admin/login', 'Admin\LoginController@login')->name('admin.login');
+Route::group(['prefix' => 'admin','middleware'=>'checkadmin'], function () {
     Route::get('/logout','Admin\LoginController@logout')->name('admin.logout');
     Route::get('/dashboard','Admin\UserController@dashboard')->name('dashboard');
     Route::get('/user-management','Admin\UserController@index')->name('user.index');
@@ -63,6 +67,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/post-add','Admin\PostController@create')->name('post.create');
     Route::post('/post-add','Admin\PostController@store')->name('post.store');
     Route::get('/post-list','Admin\PostController@index')->name('post.index');
+    Route::get('/post-edit/{id}','Admin\PostController@edit')->name('post.edit');
+    Route::post('/post-edit/{id}','Admin\PostController@update')->name('post.update');
+
+
     Route::delete('/post-delete','Admin\PostController@destroy')->name('post.destroy');
     Route::get('/banner-list','BannerController@index')->name('banner.index');
     Route::post('/banner-add','BannerController@store')->name('banner.store');
