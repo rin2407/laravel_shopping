@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 //user
 Auth::routes();
+Route::get('/contact',function(){
+    return view('home.contact');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('product/{id}','HomeController@show')->name('product.show');
 Route::get('/home/product-all','HomeController@all')->name('product.all');
