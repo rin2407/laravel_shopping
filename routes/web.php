@@ -23,13 +23,14 @@ Route::get('product/{id}','HomeController@show')->name('product.show');
 
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
-Route::group(['prefix' => 'user'], function () {
+Route::group(['prefix' => 'user','middleware'=>'auth'], function () {
     Route::post('/cart','CartController@store');
     Route::get('/cart-detail','CartController@show')->name('cart.show');
     Route::post('/cart/quantity-inc','CartController@update')->name('cart.update');
     Route::delete('/cart/cart-delete','CartController@destroy')->name('cart.destroy');
     Route::get('/checkout/{id}','UserCheckoutController@edit')->name('checkout.edit');
     Route::post('/checkout','UserCheckoutController@update')->name('checkout.update');
+    Route::post('/feedback','FeedbackController@store')->name('feedback.store');
 });
 // admin
 Route::group(['prefix' => 'admin'], function () {
@@ -57,4 +58,16 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/product-edit/{id}','Admin\ProductController@edit')->name('product.edit');
     Route::post('/product-edit/{id}','Admin\ProductController@update')->name('product.update');
     Route::delete('/product-delete','Admin\ProductController@destroy')->name('product.destroy');
+    Route::get('/post-add','Admin\PostController@create')->name('post.create');
+    Route::post('/post-add','Admin\PostController@store')->name('post.store');
+    Route::get('/post-list','Admin\PostController@index')->name('post.index');
+    Route::delete('/post-delete','Admin\PostController@destroy')->name('post.destroy');
+    Route::get('/banner-list','BannerController@index')->name('banner.index');
+    Route::post('/banner-add','BannerController@store')->name('banner.store');
+    Route::delete('/banner-delete','BannerController@destroy')->name('banner.destroy');
+    Route::post('/banner/banner-action','BannerController@update')->name('banner.update');
+
+
+
+
  });

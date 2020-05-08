@@ -35,7 +35,7 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                <a href="{{route('banner.index')}}"><i class="fa fa-edit fa-fw"></i>Banner Management</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -68,13 +68,13 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i>Post Management<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="blank.html">Blank Page</a>
+                        <a href="{{route('post.index')}}">Post List</a>
                     </li>
                     <li>
-                        <a href="login.html">Login Page</a>
+                        <a href="{{route('post.create')}}">Add Post</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
