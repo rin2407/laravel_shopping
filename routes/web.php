@@ -20,7 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('product/{id}','HomeController@show')->name('product.show');
-
+Route::get('/home/product-all','HomeController@all')->name('product.all');
+Route::get('/home/post-all','PostController@index')->name('post.all');
+Route::get('/home/post/{id}','PostController@show')->name('post.show');
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
 Route::group(['prefix' => 'user','middleware'=>'auth'], function () {
@@ -66,7 +68,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/banner-add','BannerController@store')->name('banner.store');
     Route::delete('/banner-delete','BannerController@destroy')->name('banner.destroy');
     Route::post('/banner/banner-action','BannerController@update')->name('banner.update');
-
+    Route::get('/order-list','Admin\OrderController@index')->name('order.index');
+    Route::post('/order-management/order','Admin\OrderController@update');
 
 
 

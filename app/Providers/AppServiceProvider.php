@@ -47,5 +47,12 @@ class AppServiceProvider extends ServiceProvider
              $view->with(['total_cart_product'=>0]);
             }
          });
+
+         view()->composer('admin.home-admin.dashboard',function($view){
+            $total_feedback=DB::table('feedback')->get();
+            $total_product=DB::table('products')->get();
+            $total_order=DB::table('orders')->get();
+            $view->with(['total_feedback'=>$total_feedback,'total_product'=>$total_product,'total_order'=>$total_order]);
+         });
     }
 }
