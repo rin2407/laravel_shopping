@@ -6,8 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/logo_home.png')}}">
+    <title>{{ config('app.name', 'Rin-nv') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link href="{{ asset('css/home/responsive.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/cart.css')}}">
+    <link rel="stylesheet" href="{{asset('css/search.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     @yield('css')
 </head>
@@ -93,6 +94,7 @@
     <script src="{{ asset('js/home/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/home/main.js') }}"></script>
     <script src="{{ asset('js/cart.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
     <script src="{{asset('bootstrap/js/toastr.min.js')}}"></script>
     @yield('javascript')
 </body>

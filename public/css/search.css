@@ -1,0 +1,38 @@
+.hienthitimkiem{
+	position: absolute;
+    background: white;
+    width: 500px;
+    border-color: black;
+    border-radius: 5px;
+    list-style-type: none;
+    z-index: 200000;
+}
+
+.hienthitimkiem li.search:hover,li.search:hover a{
+	background-color: rgb(77, 73, 73);
+	text-decoration: none;
+	transform: scale(1.2,1);
+	color: #fff;;
+	border-radius: 3px;
+}
+.hienthitimkiem li.search a:hover{
+	color: white;
+}
+.hienthitimkiem li.search{
+	width: 90%;
+	margin-left: 0px;
+	height: 1px;
+	position: relative;
+	right: 1px;
+}
+.hienthitimkiem li.search a{
+	font-weight: initial;
+    font-size: 15px;
+    color: black;
+}
+.hienthitimkiem li.search img{
+	position: absolute; 
+	right: 5px; 
+	top: 10px;
+	width: 27px;
+}
