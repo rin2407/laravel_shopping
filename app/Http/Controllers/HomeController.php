@@ -78,4 +78,23 @@ class HomeController extends Controller
         $size_all=Size::all();
         return view('home.product.product-all',['product_all'=>$product_all,'category_all'=>$category_all,'size_all'=>$size_all]);
     }
+    public function search(Request $request){
+        $txttimkiem=$request->get('txt');
+        $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
+                                             ->join('categories','products.category_id','=','categories.category_id')
+                                             ->where('product_name','LIKE','%'.$txttimkiem.'%')->get();
+      $total=count($product_search);
+      if($total >0){
+        echo "Có ".$total." sản phẩm bạn cần tìm";
+        echo "<br/>";
+        foreach($product_search as $p_search){
+          ?>
+       <li class="search" style="left: 0px;"><a href="<?php echo route('product.show',['id'=>$p_search->product_id]) ?>"> <?php echo $p_search->product_name ?></a>
+        <img src="<?php echo asset('images/products/'.$p_search->image_name) ?>"></li>
+          <?php
+        }
+      }else{
+        echo "Không có sản phẩm bạn tìm kiếm";
+          }
+    }
 }
