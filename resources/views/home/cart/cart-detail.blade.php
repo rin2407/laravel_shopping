@@ -78,18 +78,14 @@
                                 <td>{{number_format($total_money)." ₫"}}</td>
                             </tr>
                         </tbody>
-                    </tab
+                    </table>
                     @if (count($cart_detail) > 0)
-                      <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">Proceed to checkout</a>
+                      <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">Tiến hành thanh toán</a>
                     @endif
                 </div>
-                <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Continue shopping</a>
-
-                    <a href="" class="site-btn">Kiểm tra đơn hàng</a>
-
-                </div>
-
                 <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Tiếp tục mua hàng</a>
+            </div>
+
             </div>
         </div>
     </div>
