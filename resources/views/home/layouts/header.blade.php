@@ -18,7 +18,10 @@
                     <ul class="top-menu">
                         <li>
                             <form>
-                                <input type="text" placeholder="Nhập tìm kiếm.." aria-label="Username" aria-describedby="basic-addon1" name="search">
+                                <input type="text" placeholder="Nhập tìm kiếm.." aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
+                                @csrf
+                                <ul class="hienthitimkiem" >
+                                </ul>
                             </form>
 
                         </li>
