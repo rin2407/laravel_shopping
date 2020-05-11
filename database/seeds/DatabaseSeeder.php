@@ -31,10 +31,10 @@ class DatabaseSeeder extends Seeder
                 ['category_name'=>'jeans'],                                            
             ]);
             DB::table('status_orders')->insert([
-                ['status_order_name'=>'Awaiting confirmation'],  
-                ['status_order_name'=>'Confirm'],  
-                ['status_order_name'=>'Being delivered'],  
-                ['status_order_name'=>'Delivered'],  
+                ['status_order_name'=>'Đang đợi xác nhận'],  
+                ['status_order_name'=>'Xác nhận giao hàng'],  
+                ['status_order_name'=>'Đang giao hàng'],  
+                ['status_order_name'=>'Giao hàng thành công'],  
             ]);
     }
 }
