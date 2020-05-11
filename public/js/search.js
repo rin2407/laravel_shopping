@@ -11,7 +11,7 @@ $(document).ready(function(){
          else{
            timeout=setTimeout(function(){
           $.ajax({
-          url: origin+"/home/product-search",
+          url: origin+"/home/product-search-ajax",
           type:"post",
           data: {txt:txt, _token:_token},
           asyno:true,
