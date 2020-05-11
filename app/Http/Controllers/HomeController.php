@@ -97,4 +97,12 @@ class HomeController extends Controller
         echo "Không có sản phẩm bạn tìm kiếm";
           }
     }
+    public function product_search(){
+      $txt = ($_GET['search']);
+      $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
+                                             ->join('categories','products.category_id','=','categories.category_id')
+                                             ->where('product_name','LIKE','%'.$txt.'%')->get();
+      return view('home.product.product-search',['product_search'=>$product_search]);
+
+    }
 }
