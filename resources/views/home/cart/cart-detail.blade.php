@@ -27,7 +27,7 @@
                                         <img src="{{asset('images/products/'.$c_detail->image_name)}}" alt="">
                                         <div class="pc-title">
                                             <h4>{{$c_detail->product_name}}</h4>
-                                            <p>{{number_format($c_detail->promo_price)}}</p>
+                                            <p>{{number_format($c_detail->promo_price)}}<sup>đ</sup></p>
                                         </div>
                                     </td>
                                     <td class="quy-col">
@@ -42,7 +42,7 @@
                                         <h4>Size M</h4>
                                     </td>
                                     <td class="total-col">
-                                        <h4>{{number_format($c_detail->promo_price * $c_detail->quantity)." ₫"}}</h4>
+                                        <h4>{{number_format($c_detail->promo_price * $c_detail->quantity)}}<sup>đ</sup></h4>
                                     </td>
                                     <td class="action-col">
                                             <button class="delete">
@@ -71,11 +71,11 @@
                         <tbody>
                             <tr>
                                 <th class="total-cost">Tổng tiền</th>
-                                <td>{{number_format($total_money)." ₫"}}</td>
+                                <td>{{number_format($total_money)}}<sup>đ</sup></td>
                             </tr>
                             <tr>
                                 <th>Tổng</th>
-                                <td>{{number_format($total_money)." ₫"}}</td>
+                                <td>{{number_format($total_money)}}<sup>đ</sup></td>
                             </tr>
                         </tbody>
                     </table>

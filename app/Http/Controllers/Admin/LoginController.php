@@ -18,7 +18,7 @@ class LoginController extends Controller
         if (Auth::guard('admin')->attempt(['email' => $email, 'password' => $password], true)) {
             return redirect()->route('dashboard');
         }else{
-            echo "login that bai";
+            return redirect()->back()->with('fail_login','Đăng nhập thất bại. Email hoặc mật khẩu không đúng');
         }
     }
     public function logout(){

@@ -6,6 +6,7 @@
     border-color: black;
     border-radius: 5px;
     list-style-type: none;
+    display: none;
     z-index: 200000;
     padding: 10px;
     right: 20px;

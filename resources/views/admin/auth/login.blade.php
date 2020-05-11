@@ -64,6 +64,11 @@
                                 @endif
                             </div>
                         </div>
+                        @if(session('fail_login'))
+                        <div class="text-center">
+                           <p style="color:red"> {{session('fail_login')}}</p>
+                         </div>
+                    @endif
                     </form>
                 </div>
             </div>
