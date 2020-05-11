@@ -1514,6 +1514,10 @@ section.cart-section {
     background-color: #f8f9fa;
 }
 
+section.cart-section .table td {
+    border-top: none!important;
+}
+
 section.cart-section .cart-box {
     background-color: #fff;
     border: 1px solid #e5e5e5;
@@ -2200,7 +2204,7 @@ h3.h3 {
 
 .product-grid4 .product-image4 img {
     width: 100%;
-    height: auto
+    height: 276px;
 }
 
 .product-grid4 .pic-1 {
@@ -3338,8 +3342,8 @@ button.delete i {
 
 /* ================================================================ */
 
-.nav-tab a.nav-item {
-    color: #333;
+.nav-tabs li.nav-item a.nav-link {
+    color: #333!important;
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -3352,12 +3356,21 @@ button.delete i {
     font-family: 'Open Sans', sans-serif;
 }
 
-.nav-tab a.nav-item.active::before,
-.nav-tab a.nav-item.active::after {
+.nav-tabs .nav-link.active {
+    border: none!important;
+}
+
+.nav-tabs li.nav-item .nav-link:hover,
+.nav-tabs li.nav-item .nav-link:active {
+    border: none!important;
+}
+
+.nav-tabs li.nav-item a.nav-link.active::before,
+.nav-tabs li.nav-item a.nav-link.active::after {
     opacity: 1;
 }
 
-.nav-tab a.nav-item::before {
+.nav-tabs li.nav-item a.nav-link::before {
     position: absolute;
     left: 0;
     top: 0;
@@ -3369,9 +3382,9 @@ button.delete i {
     transition: all 0.5s ease 0s;
 }
 
-.nav-tab a.nav-item::after {
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
+.nav-tabs li.nav-item a.nav-link::after {
+    border-left: 8px solid transparent!important;
+    border-right: 8px solid transparent!important;
     border-top: 8px solid #f9a134!important;
     top: 1px;
     content: "";
@@ -3385,10 +3398,16 @@ button.delete i {
     transition: all 0.5s ease 0s;
 }
 
+.user .tab-content {
+    background: #cccccc69;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px 2px #0000001a;
+}
+
 .user {
     padding-top: 5%;
     padding-bottom: 5%;
-    background-color: #a9a9a93b;
+    /* background-color: #a9a9a93b; */
 }
 
 .user .input-group-text {

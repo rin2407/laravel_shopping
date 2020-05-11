@@ -58,7 +58,7 @@
             <nav class="navbar navbar-expand-lg navbar-light pb-2">
                 <a class="navbar-brand" href="index.html">
                     <span class="logo-text">
-                    <img src="{{asset('images/logo.svg')}}" alt="">
+                    <img src="{{asset('images/logolyn.PNG')}}" alt="">
                 </span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

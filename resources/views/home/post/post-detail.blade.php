@@ -21,7 +21,7 @@
                         <ul class="products-list">
                             @foreach ($list_post as $ls)
                             <li>
-                                <a href="{{route('post.show',['id'=>$ls->post_id])}}"><img src="{{asset('images/posts/'.$ls->image_post)}}" alt=""></a>
+                                <a href="{{route('post.show',['id'=>$ls->post_id])}}"><img src="{{asset('/images/posts/'.$ls->image_post)}}" alt=""></a>
                                 <div class="list-content">
                                     <h3><a href="{{route('post.show',['id'=>$ls->post_id])}}">{{$ls->post_title}}</a></h3>
                                 </div>
@@ -44,7 +44,7 @@
                                 </p>
                             </div>
                         </div>
-                        <a href=""><img src="images/slider-image-1.jpg" alt="" width="100%"></a>
+                        <a href=""><img src="{{asset('images/posts/'.$post_detail->image_post)}}" alt="" width="100%"></a>
                         <div class="post-content">
                             <p>{{$post_detail->post_detail}}</p>
                 </div>

@@ -5,7 +5,7 @@
 
         <ul class="page-depth">
             <li><a href="index.html">Trang chủ</a></li>
-            <li class="bt"><a href="new.html">Tin tức</a></li>
+            <li class="bt"><a href="{{url('/contact')}}">Tin tức</a></li>
         </ul>
     </div>
 </section>
