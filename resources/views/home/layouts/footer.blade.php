@@ -5,13 +5,13 @@
 
                 <div class="col-lg-5 col-md-6">
                     <div class="footer-widget text-widget">
-                        <a href="index.html" class="footer-logo"><img src="{{asset('images/logo_light.svg')}}" alt=""></a>
+                        <a href="index.html" class="footer-logo"><img src="{{asset('images/logolyn.PNG')}}" alt=""></a>
                         <!-- <p class="pt-4">We named our theme Studiare because to us,<br> the best brands are simple ones. Brands thrive<br> on their ability to be understood.</p>
                          -->
                         <ul class="pt-4">
                             <li>
                                 <div class="contact-info-value-title">
-                                    Trung Tâm Thời Trang EQ
+                                    Trung Tâm Thời Trang LYN'S
                                 </div>
                             </li>
                             <li>

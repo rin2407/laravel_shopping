@@ -22,7 +22,7 @@
                     </div>
                     <div class="course-content-main">
                         <h2 class="course-title">
-                            <a href="#">{{$ls_post->post_title}}</a>
+                            <a href="{{route('post.show',['id'=>$ls_post->post_id])}}">{{$ls_post->post_title}}</a>
                         </h2>
                         <p class="summary">
                             {{$ls_post->post_detail}}

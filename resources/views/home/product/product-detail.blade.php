@@ -3,8 +3,10 @@
 <section class="page-banner-section my-4">
     <div class="container">
         <ul class="page-depth">
-            <li><a href="index.html">Trang chủ</a></li>
-            <li class="bt"><a href="course.html">Chi tiết sản phẩm</a></li>
+            <li><a href="{{route('home')}}">Trang chủ</a></li>
+            <li class="bt"><a>Chi tiết sản phẩm</a></li>
+            <li class="bt"><a href="{{route('product.show',['id'=>$p_detail->product_id])}}">{{$p_detail->product_name}}</a></li>
+
 
         </ul>
     </div>
@@ -29,7 +31,7 @@
             </div>
             <div class="col-lg-6 product-details">
                 <h2 class="p-title">{{$p_detail->product_name}}</h2>
-                <h3 class="p-price">{{$p_detail->promo_price}}</h3>
+                <h3 class="p-price">{{number_format($p_detail->promo_price)}}<sup>đ</sup></h3>
                 <h4 class="p-stock">Available: <span>In Stock</span></h4>
                 <div class="p-rating">
                     <i class="fa fa-star-o"></i>
