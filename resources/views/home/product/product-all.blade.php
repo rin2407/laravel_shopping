@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-lg-3 order-2 order-lg-1">
                 <div class="filter-widget">
-                    <h2 class="fw-title">Categories</h2>
+                    <h2 class="fw-title">Loại sản phẩm</h2>
                     <ul class="category-menu">
                         @foreach ($category_all as $ctgr_all)
                         <li class=""><a href="#">{{$ctgr_all->category_name}}</a></li>

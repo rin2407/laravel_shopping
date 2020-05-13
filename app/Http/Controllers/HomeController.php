@@ -82,19 +82,33 @@ class HomeController extends Controller
         $txttimkiem=$request->get('txt');
         $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
                                              ->join('categories','products.category_id','=','categories.category_id')
+                                             ->whereNull('products.deleted_at')
                                              ->where('product_name','LIKE','%'.$txttimkiem.'%')->get();
       $total=count($product_search);
       if($total >0){
-        echo "Có ".$total." sản phẩm bạn cần tìm";
+        echo "<li> Có ".$total." sản phẩm bạn cần tìm </li>"; 
         echo "<br/>";
         foreach($product_search as $p_search){
           ?>
-       <li class="search" style="left: 0px;"><a href="<?php echo route('product.show',['id'=>$p_search->product_id]) ?>"> <?php echo $p_search->product_name ?></a>
-        <img src="<?php echo asset('images/products/'.$p_search->image_name) ?>"></li>
+       <li class="search" >
+          <div class="d-flex">
+          <img src="<?php echo asset('images/products/'.$p_search->image_name) ?>">
+          <a href="<?php echo route('product.show',['id'=>$p_search->product_id]) ?>"> <?php echo $p_search->product_name ?></a>
+          </div>  
+      </li>
           <?php
         }
       }else{
         echo "Không có sản phẩm bạn tìm kiếm";
           }
+    }
+    public function product_search(){
+      $txt = ($_GET['search']);
+      $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
+                                             ->join('categories','products.category_id','=','categories.category_id')
+                                             ->whereNull('products.deleted_at')
+                                             ->where('product_name','LIKE','%'.$txt.'%')->get();
+      return view('home.product.product-search',['product_search'=>$product_search]);
+
     }
 }

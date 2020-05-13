@@ -11,11 +11,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="product-th">Product</th>
-                                    <th class="quy-th">Quantity</th>
-                                    <th class="size-th">SizeSize</th>
-                                    <th class="total-th">Price</th>
-                                    <th class="action-th">Action</th>
+                                    <th class="product-th">Sản phẩm</th>
+                                    <th class="quy-th">Số lượng</th>
+                                    {{-- <th class="size-th">SizeSize</th> --}}
+                                    <th class="total-th">Giá</th>
+                                    <th class="action-th">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,9 +38,9 @@
                                                 <span class="inc qtybtn" data-amount-inc="{{$c_detail->amount}}" data-product-id="{{$c_detail->product_id}}">+</span></div>
                                         </div>
                                     </td>
-                                    <td class="size-col">
+                                    {{-- <td class="size-col">
                                         <h4>Size M</h4>
-                                    </td>
+                                    </td> --}}
                                     <td class="total-col">
                                         <h4>{{number_format($c_detail->promo_price * $c_detail->quantity)." ₫"}}</h4>
                                     </td>
@@ -55,7 +55,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td colspan="5">Your cart is empty.</td>
+                                    <td colspan="5">Giỏ hàng của bạn trống.</td>
                                 </tr>
                                 @endif
                             </tbody>

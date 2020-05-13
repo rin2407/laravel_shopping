@@ -6,8 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/logo_home.png')}}">
-    <title>{{ config('app.name', 'Rin-nv') }}</title>
+    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/logolyn.png')}}">
+    <title>{{ config('app.name', 'LYNS') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

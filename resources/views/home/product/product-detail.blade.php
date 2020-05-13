@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="quantity">
-                    <p>Quantity</p>
+                    <p>Số lượng</p>
                     <div class="pro-qty">
                         <span class="dec qtybtn">-</span>
                         <input type="text" value="1" class="count">

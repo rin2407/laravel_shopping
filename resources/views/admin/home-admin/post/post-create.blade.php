@@ -7,7 +7,7 @@
 <div id="page-wrapper">
     <div class="container-fluid mt-3">
         <div class="title">
-            <strong><h3 class="text-center">Add post</h3></strong>
+            <strong><h3 class="text-center">Thêm tin tức</h3></strong>
         </div>
         <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data" autocomplete="off">
             @csrf
@@ -15,7 +15,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     
                     <div class="form-group row">
-                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Post name</label>
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Tên tin tức</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="exampleFormControlInput1" name="post_name" value="{{old('post_name')}}">
                         @if($errors->has('post_name'))
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                         <div class="form-group row">
-                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Descripe</label>
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Mô tả</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="post_detail" value="{{old('post_detail')}}">
                             @if($errors->has('post_detail'))
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                        <div class="form-group row">
-                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Image</label>
+                        <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Hình ảnh</label>
                        <div class="col-sm-10">
                         <input id="ImageMedias" multiple="multiple" name="image" type="file"
                         accept=".jfif,.jpg,.jpeg,.png,.gif" class="custom-file-input"  value="">  
@@ -47,8 +47,8 @@
                 </div>
             </div>
           <div class="text-center">
-           <button type="submit" class="btn btn-success">Add Post</button>
-          <a href="{{route('post.index')}}" type="submit" class="btn btn-primary">Return</a>
+           <button type="submit" class="btn btn-success">Thêm tin tức</button>
+          <a href="{{route('post.index')}}" type="submit" class="btn btn-primary">Trở lại</a>
           </div>
         <form>
     </div>

@@ -17,11 +17,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 right">
                     <ul class="top-menu">
                         <li>
-                            <form>
+                            <form action="{{route('product.search')}}" method="get">
                                 <input type="text" placeholder="Nhập tìm kiếm.." aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
                                 @csrf
                                 <ul class="hienthitimkiem" >
                                 </ul>
+                                <button type="submit" style="display:none"></button>
                             </form>
 
                         </li>
