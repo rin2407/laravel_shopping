@@ -15,7 +15,7 @@
                     <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Hình ảnh</label>
                    <div class="col-sm-10">
                     <input id="ImageMedias" multiple="multiple" name="image" type="file"
-                    accept=".jfif,.jpg,.jpeg,.png,.gif" class="custom-file-input"  value="">  
+                    accept=".jfif,.jpg,.jpeg,.png,.gif" class="custom-file-input"  value=""> 
                     @if($errors->has('image'))
                         <p style="color: red">{{$errors->first('image')}}</p>
                     @endif     
