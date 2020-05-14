@@ -43,33 +43,6 @@
                 <div class="p-review">
                     <a href="">3 reviews</a>|<a href="">Add your review</a>
                 </div>
-                <div class="fw-size-choose">
-                    <p>Size</p>
-                    <div class="sc-item">
-                        <input type="radio" name="sc" id="xs-size">
-                        <label for="xs-size">32</label>
-                    </div>
-                    <div class="sc-item">
-                        <input type="radio" name="sc" id="s-size">
-                        <label for="s-size">34</label>
-                    </div>
-                    <div class="sc-item">
-                        <input type="radio" name="sc" id="m-size" checked="">
-                        <label for="m-size">36</label>
-                    </div>
-                    <div class="sc-item">
-                        <input type="radio" name="sc" id="l-size">
-                        <label for="l-size">38</label>
-                    </div>
-                    <div class="sc-item disable">
-                        <input type="radio" name="sc" id="xl-size" disabled="">
-                        <label for="xl-size">40</label>
-                    </div>
-                    <div class="sc-item">
-                        <input type="radio" name="sc" id="xxl-size">
-                        <label for="xxl-size">42</label>
-                    </div>
-                </div>
                 <div class="quantity">
                     <p>Quantity</p>
                     <div class="pro-qty">
@@ -97,16 +70,6 @@
                                 <tr>
                                     <td class="name">Tên sản phẩm</td>
                                     <td>{{$p_detail->product_name}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="name">Kích thước</td>
-                                    <td>Thornton</td>
-                                </tr>
-                                <tr>
-
-                                    <td class="name">Màu</td>
-                                    <td>Thornton</td>
-
                                 </tr>
                                 <tr>
 

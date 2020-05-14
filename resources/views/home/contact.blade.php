@@ -21,7 +21,7 @@
                             <li>
 
                                 <div class="contact-info-value-title">
-                                    Trụ Sở Chính Công ty CP Giáo Dục SPARTA VN (CS1)
+                                    Trụ Sở Chính Đồng hồ Rin'nv (CS1)
                                 </div>
                             </li>
                             <li>
@@ -34,13 +34,13 @@
                                 <div class="contact-info-icon">
                                     <i class="fas fa-phone-alt "></i>
                                 </div>
-                                <div class="contact-info-value">02367.109.808</div>
+                                <div class="contact-info-value">0368390511</div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="contact-info-value">sparta.edu.vn@gmail.com</div>
+                                <div class="contact-info-value">dhrinv@@gmail.com</div>
                             </li>
                         </ul>
                     </div>

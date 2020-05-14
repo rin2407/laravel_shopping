@@ -64,6 +64,7 @@ class HomeController extends Controller
         $product_relate= DB::table('products')
                           ->join('categories','products.category_id','categories.category_id')
                           ->join('image_products','image_products.product_id','products.product_id')
+                          ->whereNull('products.deleted_at')
                           ->where('products.category_id','=',$product_detail->category_id)->get();
         return view('home.product.product-detail',['p_detail'=>$product_detail,'p_relate'=>$product_relate,'list_comment'=>$list_comment]);
     }

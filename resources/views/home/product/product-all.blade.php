@@ -21,7 +21,7 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="filter-widget">
+                {{-- <div class="filter-widget">
                     <h2 class="fw-title">Size</h2>
                     <div class="fw-size-choose">
                         @foreach ($size_all as $s_all)
@@ -31,17 +31,7 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
-                <div class="filter-widget">
-                    <h2 class="fw-title">Brand</h2>
-                    <ul class="category-menu">
-                        <li><a href="#">Abercrombie &amp; Fitch <span>(2)</span></a></li>
-                        <li><a href="#">Asos<span>(56)</span></a></li>
-                        <li><a href="#">Bershka<span>(36)</span></a></li>
-                        <li><a href="#">Missguided<span>(27)</span></a></li>
-                        <li><a href="#">Zara<span>(19)</span></a></li>
-                    </ul>
-                </div>
+                </div> --}}
             </div>
             <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
                 <div class="row">

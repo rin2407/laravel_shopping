@@ -5,32 +5,32 @@
 
                 <div class="col-lg-5 col-md-6">
                     <div class="footer-widget text-widget">
-                        <a href="index.html" class="footer-logo"><img src="{{asset('images/logolyn.PNG')}}" alt=""></a>
+                        <a href="index.html" class="footer-logo"><img src="{{asset('images/logo_f.PNG')}}" alt=""></a>
                         <!-- <p class="pt-4">We named our theme Studiare because to us,<br> the best brands are simple ones. Brands thrive<br> on their ability to be understood.</p>
                          -->
                         <ul class="pt-4">
                             <li>
                                 <div class="contact-info-value-title">
-                                    Trung Tâm Thời Trang LYN'S
+                                    Đồng hồ Rin'nv
                                 </div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <div class="contact-info-value">114 Đồng Bài 2, Q.Liên Chiểu, TP. Đà Nẵng</div>
+                                <div class="contact-info-value"> 40 Ngô Thị Nhậm, Q.Liên Chiểu, TP. Đà Nẵng</div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
                                     <i class="fas fa-phone-alt "></i>
                                 </div>
-                                <div class="contact-info-value">02367.109.808</div>
+                                <div class="contact-info-value">0368390511</div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="contact-info-value">sparta.edu.vn@gmail.com</div>
+                                <div class="contact-info-value">vanrin24071998@gmail.com</div>
                             </li>
                         </ul>
 
@@ -67,7 +67,7 @@
     <div class="footer-copyright copyrights-layout-default">
         <div class="container">
             <div class="copyright-inner">
-                <div class="copyright-cell"> © 2020 <span class="highlight">Sparta</span>. Created by Sparta Team.</div>
+                <div class="copyright-cell"> © 2020 <span class="highlight">google</span>. Created by Rin'nv.</div>
                 <div class="copyright-cell">
                     <ul class="studiare-social-links">
                         <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>

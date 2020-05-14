@@ -14,7 +14,7 @@ body {
 /* start==Header== */
 
 .header {
-    background-color: #2e3e77;
+    background-color: #000;
 }
 
 .header i {
@@ -155,7 +155,7 @@ body {
 }
 
 .dropdown-item:hover {
-    color: #f9a134!important;
+    color: #3cb9b4!important;
 }
 
 .dropdown-menu a {
@@ -180,7 +180,7 @@ li.nav-item {
 }
 
 li.nav-item a.nav-link:hover {
-    color: #f9a134!important;
+    color: #3cb9b4!important;
     transition: all, .25s;
 }
 
@@ -194,7 +194,7 @@ li.nav-item a.nav-link:hover {
     font-size: 16px;
     text-shadow: none;
     display: inline-block;
-    background-color: #f9a134;
+    background-color: #3cb9b4;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
@@ -372,7 +372,7 @@ a.readmore:hover {
 }
 
 li.nav-item.active .nav-link {
-    color: #f9a134!important;
+    color: #3cb9b4!important;
 }
 
 .img-1-slide {
@@ -482,8 +482,8 @@ li.nav-item.active .nav-link {
     -moz-border-radius: 22px;
     -ms-border-radius: 22px;
     border-radius: 22px;
-    color: #f9a134;
-    border: 1px solid #f9a134;
+    color: #3cb9b4;
+    border: 1px solid #3cb9b4;
 }
 
 .block-style-3 .three img {
@@ -772,12 +772,12 @@ a:hover {
 }
 
 .blog-section i {
-    color: #f9a134;
+    color: #3cb9b4;
 }
 
 .course-required h4 {
     font-weight: 500;
-    color: #f9a134;
+    color: #000;
 }
 
 .course-required ul {
@@ -795,12 +795,12 @@ a:hover {
 
 .course-required a:hover {
     text-decoration: none;
-    /* color: #f9a134; */
+    /* color: #3cb9b4; */
 }
 
 .course-required ul li span {
-    color: #f9a134;
-    border: 1px solid #f9a134;
+    color: #3cb9b4;
+    border: 1px solid #3cb9b4;
     border-radius: 50%;
     padding: 4px 10px;
     margin-right: 7px;
@@ -866,7 +866,7 @@ a:hover {
 
 .course-content-bottom .course-price {
     font-size: 15px;
-    color: #f9a134;
+    color: #3cb9b4;
 }
 
 .section-bs5 {
@@ -907,7 +907,7 @@ a:hover {
     position: relative;
     width: 80px;
     height: 80px;
-    border: 2px solid #f9a134;
+    border: 2px solid #3cb9b4;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -929,7 +929,7 @@ a:hover {
     height: 14px;
     border-radius: 2px;
     left: 12px;
-    background-color: #f9a134;
+    background-color: #3cb9b4;
 }
 
 .events-post .event-inner-content .top-part .date-holder .date:after {
@@ -955,7 +955,7 @@ h2.title {
 .events-post .event-inner-content .top-part .event-meta .event-meta-piece i {
     font-size: 18px;
     margin-right: 8px;
-    color: #f9a134;
+    color: #3cb9b4;
     float: left;
 }
 
@@ -1006,7 +1006,7 @@ h2.title {
 }
 
 .btn-submit {
-    background-color: #f9a134;
+    background-color: #3cb9b4;
     color: #fff;
 }
 
@@ -1237,8 +1237,8 @@ a.button-two {
     color: #ffffff;
     font-size: 15px;
     padding: 10px 25px;
-    border: 1px solid #f9a134;
-    background: #f9a134;
+    border: 1px solid #3cb9b4;
+    background: #3cb9b4;
     font-weight: 400;
     -webkit-border-radius: 24px;
     -moz-border-radius: 24px;
@@ -1263,7 +1263,7 @@ a.button-two {
 }
 
 .blog i {
-    color: #f9a134;
+    color: #3cb9b4;
     margin-right: 8px;
     float: left;
     font-size: 22px;
@@ -1276,7 +1276,7 @@ a.button-two {
 
 .owl3 .owl-dots .owl-dot.active span,
 .owl3 .owl-dots .owl-dot:hover span {
-    background: #f9a134;
+    background: #3cb9b4;
 }
 
 
@@ -1311,7 +1311,7 @@ h2.name {
 
 .owl2 .owl-dots .owl-dot.active span,
 .owl2 .owl-dots .owl-dot:hover span {
-    background: #f9a134;
+    background: #3cb9b4;
 }
 
 
@@ -1323,7 +1323,7 @@ h2.name {
 .footer {
     padding-top: 5%;
     padding-bottom: 5%;
-    background-color: #2e3e77;
+    background-color: #000;
 }
 
 .footer .up-footer .footer-widget .footer-logo {
@@ -1417,7 +1417,7 @@ h2.name {
     border-bottom-right-radius: 2px;
     height: 100%;
     box-shadow: none;
-    background-color: #f9a134;
+    background-color: #3cb9b4;
     color: #fff;
     text-align: center;
     border: 0;
@@ -1479,7 +1479,7 @@ h2.name {
 .footer .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff!important;
-    background-color: #f9a134!important;
+    background-color: #3cb9b4!important;
 }
 
 .contact-info-value-title {
@@ -1610,7 +1610,7 @@ section.cart-section .cart-box table tr td a {
     font-size: 16px;
     text-shadow: none;
     display: inline-block;
-    background-color: #f9a134;
+    background-color: #3cb9b4;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
@@ -1717,7 +1717,7 @@ section.page-banner-section ul.page-depth li a {
 
 .sidebar .products-widget ul.products-list li span {
     font-size: 13px;
-    color: #f9a134;
+    color: #3cb9b4;
     margin: 0;
 }
 
@@ -1820,7 +1820,7 @@ section.page-banner-section ul.page-depth li a {
 }
 
 .blog-post .post-content .post-meta i {
-    color: #f9a134;
+    color: #3cb9b4;
     margin-right: 8px;
     float: left;
     font-size: 22px;
@@ -2081,7 +2081,7 @@ a.text-link {
 }
 
 .sidebar div.course-widget .product-meta-info-list .meta-info-unit .icon {
-    color: #f9a134;
+    color: #3cb9b4;
     font-size: 16px;
     margin-right: 15px;
     line-height: 10px;
@@ -2152,7 +2152,7 @@ section.contact-info-section .info-post p {
 .contact .nav-pills .nav-link.active,
 .contact .nav-pills .show>.nav-link {
     color: #fff!important;
-    background-color: #f9a134!important;
+    background-color: #3cb9b4!important;
 }
 
 td.product-thumbnail {
@@ -2267,7 +2267,7 @@ h3.h3 {
 
 .product-grid4 .social li a:hover {
     color: #fff;
-    background: #f9a134;
+    background: #3cb9b4;
 }
 
 .product-grid4 .social li a:after,
@@ -2322,7 +2322,7 @@ h3.h3 {
 .product-grid4 .product-discount-label {
     left: auto;
     right: 10px;
-    background-color: #f8b25c
+    background-color: #3cb9b4
 }
 
 .product-grid4:hover .product-new-label {
@@ -2385,12 +2385,12 @@ h3.h3 {
 
 .product-grid4:hover .add-to-cart {
     border: 1px solid transparent;
-    background: #f9a134;
+    background:#3cb9b4;
     color: #fff
 }
 
 .product-grid4 .add-to-cart:hover {
-    background-color: #459ae5;
+    background-color: #3cb9b4;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5)
 }
 
@@ -2481,7 +2481,7 @@ h3.h3 {
 }
 
 .fw-size-choose input[type=radio]:checked+label {
-    background: #f9a134;
+    background: #3cb9b4;
     color: #fff;
 }
 
@@ -2606,7 +2606,7 @@ h3.h3 {
     padding: 18px 47px 14px;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #f9a134;
+    background: #3cb9b4;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -2760,7 +2760,7 @@ h3.h3 {
 }
 
 .product-section .nav-tabs .nav-link.active {
-    color: #f9a134;
+    color: #3cb9b4;
     font-weight: 600;
     font-size: medium;
     text-transform: uppercase;
@@ -3376,7 +3376,7 @@ button.delete i {
     top: 0;
     width: 100%;
     height: 2px;
-    background: #f9a134!important;
+    background: #3cb9b4!important;
     content: "";
     opacity: 0;
     transition: all 0.5s ease 0s;
@@ -3385,7 +3385,7 @@ button.delete i {
 .nav-tabs li.nav-item a.nav-link::after {
     border-left: 8px solid transparent!important;
     border-right: 8px solid transparent!important;
-    border-top: 8px solid #f9a134!important;
+    border-top: 8px solid #3cb9b4!important;
     top: 1px;
     content: "";
     height: 0px;
@@ -3411,12 +3411,12 @@ button.delete i {
 }
 
 .user .input-group-text {
-    background: #f9a134;
+    background: #3cb9b4;
     color: #fff;
 }
 
 .user .form-control {
-    border: 1px solid #f9a134;
+    border: 1px solid #3cb9b4;
 }
 
 .user .form-control:focus {
