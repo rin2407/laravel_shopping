@@ -3,19 +3,21 @@
         @csrf
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header text-center">
           <h5 class="modal-title" id="staticBackdropLabel">Thêm loại sản phẩm</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Tên loại sản phẩm
-                <input type="text" class="form-control" id="recipient-name" name="category_name" required>
+        <div class="modal-body text-center">
+            <div class="form-group row">
+                <label for="recipient-name" class="col-sm-3 col-form-label">Tên loại sản phẩm</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="recipient-name" name="category_name" required>
                 @if($errors->has('category_name'))
                    <p style="color: red">{{$errors->first('category_name')}}</p>
                 @endif
+                </div>
             </div>
         </div>
         <div class="modal-footer">

@@ -48,7 +48,7 @@ $(document).ready(function() {
         var origin = window.location.origin;
         if (quantity_inc > amount_inc) {
             $(this).prev().val(amount_inc);
-            toastr.error('Exceeding the quantity of products in stock');
+            toastr.error('Vượt quá số lượng sản phẩm có trong kho');
         } else {
             $.ajaxSetup({
                 headers: {

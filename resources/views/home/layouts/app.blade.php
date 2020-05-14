@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/logolyn.png')}}">
+    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/a.jpg')}}">
     <title>{{ config('app.name', 'LYNS') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

@@ -15,10 +15,12 @@
                     <div class="row panel-heading">
                     
                         <div class="col-md-6 title">Danh sách loại sản phẩm</div>
-                        <div class="col-md-6 text-right">
+                        <div class="col-md-6 ">
+                            <div class="text-right">
                             <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#staticBackdrop">
-                                Thêm sản phẩm
+                                Thêm loại sản phẩm
                               </button>
+                            </div>
                               @include('admin.home-admin.modal.modal_add_category')
                        
                     </div>
