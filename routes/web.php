@@ -26,7 +26,8 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('/product/{id}','HomeController@show')->name('product.show');
     Route::get('/product-all','HomeController@all')->name('product.all');
     Route::post('/product-search-ajax','HomeController@search');
-    Route::get('/product-search','HomeController@product_search')->name('product.search');    Route::get('/post-all','PostController@index')->name('post.all');
+    Route::get('/product-search','HomeController@product_search')->name('product.search');
+    Route::get('/post-all','PostController@index')->name('post.all');
     Route::get('/post/{id}','PostController@show')->name('post.show');
 });
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');

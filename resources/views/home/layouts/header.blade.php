@@ -22,7 +22,7 @@
                                 @csrf
                                 <ul class="hienthitimkiem" >
                                 </ul>
-                                <button type="submit" style="display:none"></button>
+                                <button type="submit" style="display:none">Search</button>
                             </form>
 
                         </li>

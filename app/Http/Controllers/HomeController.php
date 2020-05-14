@@ -110,8 +110,6 @@ class HomeController extends Controller
       $txt = ($_GET['search']);
       $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
                                              ->join('categories','products.category_id','=','categories.category_id')
-                                             ->whereNull('products.deleted_at')
-                                             ->where('products.amount','>',0)
                                              ->where('product_name','LIKE','%'.$txt.'%')->get();
       return view('home.product.product-search',['product_search'=>$product_search]);
 
