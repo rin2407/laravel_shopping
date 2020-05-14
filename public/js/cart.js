@@ -3,31 +3,36 @@ $(document).ready(function() {
     $('.cart').click(function() {
         clearTimeout(timeout);
         var product_id = $(this).attr("data-product_id");
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        var _token = $('meta[name="csrf_token"]').attr('content');
-        var origin = window.location.origin;
-        timeout = setTimeout(function() {
-            $.ajax({
-                url: origin + "/user/cart",
-                type: "post",
-                data: { data_product_id: product_id, data_token: _token },
-                asyno: true,
-                success: function(kq) {
-                    if (kq == "yes") {
-                        toastr.error('Sản phẩm đã có trong giỏ hàng');
-                    } else {
-                        toastr.success('Sản phẩm đã được thêm vào giỏ hàng thành công');
-                        setTimeout(function() {
-                            location.reload();
-                        }, 500);
-                    }
+        var user_id = $(this).attr("data-user");
+        if (user_id == 1) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-        }, 1000);
+            var _token = $('meta[name="csrf_token"]').attr('content');
+            var origin = window.location.origin;
+            timeout = setTimeout(function() {
+                $.ajax({
+                    url: origin + "/user/cart",
+                    type: "post",
+                    data: { data_product_id: product_id, data_token: _token },
+                    asyno: true,
+                    success: function(kq) {
+                        if (kq == "yes") {
+                            toastr.error('Sản phẩm đã có trong giỏ hàng');
+                        } else {
+                            toastr.success('Sản phẩm đã được thêm vào giỏ hàng thành công');
+                            setTimeout(function() {
+                                location.reload();
+                            }, 500);
+                        }
+                    }
+                });
+            }, 1000);
+        } else {
+            toastr.warning('Bạn cần đăng nhập để mua hàng');
+        }
 
     });
 });

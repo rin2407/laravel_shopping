@@ -201,24 +201,24 @@
                 <div class="item">
                     <div class="product-grid4">
                         <div class="product-image4">
-                            <a href="#">
+                            <a href="{{route('product.show',['id'=>$relate->product_id])}}">
                                 <img class="pic-1" src="{{asset('images/products/'.$relate->image_name)}}">
                                 <img class="pic-2" src="{{asset('images/products/'.$relate->image_name)}}">
                             </a>
                             <ul class="social">
                                 <li><a href="{{route('product.show',['id'=>$relate->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                                <li><a class="cart" data-tip="Thêm vào giỏ hàng" data-product_id="{{$relate->product_id}}"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a class="cart" data-tip="Thêm vào giỏ hàng" data-product_id="{{$relate->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                             <span class="product-new-label">New</span>
                             <span class="product-discount-label">-{{(round(100*($relate->unit_price-$relate->promo_price)/$relate->unit_price)) }}%</span>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="#">{{$relate->product_name}}</a></h3>
+                            <h3 class="title"><a href="{{route('product.show',['id'=>$relate->product_id])}}">{{$relate->product_name}}</a></h3>
                             <div class="price">
                                 {{number_format($relate->promo_price)}}<sup>đ</sup>
                                 <span>{{number_format($relate->unit_price)}}<sup>đ</sup></span>
                             </div>
-                            <a class="add-to-cart cart" data-product_id="{{$relate->product_id}}">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart cart" data-product_id="{{$relate->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}">Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>

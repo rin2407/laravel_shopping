@@ -18,7 +18,7 @@
             <div class="item">
                 <div class=" section-bs5 ">
                     <div class="b-style_main-img ">
-                        <img src="{{asset('images/posts/'.$ls_post->image_post)}}" alt=" " class="img-responsive " width="100%">
+                       <a href="{{route('post.show',['id'=>$ls_post->post_id])}}"> <img src="{{asset('images/posts/'.$ls_post->image_post)}}" alt=" " class="img-responsive " width="100%"></a>
                     </div>
                     <div class="course-content-main">
                         <h2 class="course-title">

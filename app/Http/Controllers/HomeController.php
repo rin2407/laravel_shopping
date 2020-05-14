@@ -34,11 +34,13 @@ class HomeController extends Controller
                       ->join('image_products','image_products.product_id','products.product_id')
                       ->orderByDesc('products.product_id')
                       ->whereNull('products.deleted_at')
+                      ->where('products.amount','>',0)
                       ->get();
         $product_sell=DB::table('products')
                       ->join('categories','products.category_id','categories.category_id')
                       ->join('image_products','image_products.product_id','products.product_id')
                       ->orderByDesc('products.view_count')
+                      ->where('products.amount','>',0)
                       ->whereNull('products.deleted_at')
                       ->paginate(8);
         $list_post=DB::table('posts')
@@ -72,6 +74,7 @@ class HomeController extends Controller
                       ->join('categories','products.category_id','categories.category_id')
                       ->join('image_products','image_products.product_id','products.product_id')
                       ->orderByDesc('products.product_id')
+                      ->where('products.amount','>',0)
                       ->whereNull('products.deleted_at')
                       ->get();
         $category_all= Category::all();
@@ -82,6 +85,7 @@ class HomeController extends Controller
         $txttimkiem=$request->get('txt');
         $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
                                              ->join('categories','products.category_id','=','categories.category_id')
+                                             ->where('products.amount','>',0)
                                              ->whereNull('products.deleted_at')
                                              ->where('product_name','LIKE','%'.$txttimkiem.'%')->get();
       $total=count($product_search);
@@ -107,6 +111,7 @@ class HomeController extends Controller
       $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
                                              ->join('categories','products.category_id','=','categories.category_id')
                                              ->whereNull('products.deleted_at')
+                                             ->where('products.amount','>',0)
                                              ->where('product_name','LIKE','%'.$txt.'%')->get();
       return view('home.product.product-search',['product_search'=>$product_search]);
 

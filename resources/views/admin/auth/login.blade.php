@@ -1,5 +1,4 @@
-@extends('home.layouts.app')
-
+@extends('admin.home-admin.layouts.login_layout');
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -58,7 +57,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" href="#">
                                         {{ __('Quên mật khẩu?') }}
                                     </a>
                                 @endif
