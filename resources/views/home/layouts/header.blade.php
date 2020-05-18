@@ -56,7 +56,7 @@
     <div class="menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light pb-2">
-                <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{route('home')}}">
                     <span class="logo-text">
                     <img src="{{asset('images/logolyn.PNG')}}" alt="">
                 </span>

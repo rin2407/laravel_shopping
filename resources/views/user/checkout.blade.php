@@ -31,15 +31,15 @@
                         @foreach ($list_cart as $ls_cart)
                         <li>
                             <h6>{{$ls_cart->product_name}}</h6>
-                            <p>{{$ls_cart->promo_price}} X {{$ls_cart->quantity}} = {{$ls_cart->promo_price * $ls_cart->quantity}}đ</p>
+                            <p>{{number_format($ls_cart->promo_price)}} X {{$ls_cart->quantity}} = {{number_format($ls_cart->promo_price * $ls_cart->quantity)}}<sup>đ</sup></p>
                         </li>
                         <?php $total_money+=($ls_cart->promo_price * $ls_cart->quantity) ?>
                         @endforeach
                     </ul>
                     <ul class="price-list">
-                        <li>Tổng<span>{{$total_money}}đ</span></li>
+                        <li>Tổng<span>{{number_format($total_money)}}<sup>đ</sup></span></li>
                         <li>Shipping<span>free</span></li>
-                        <li class="total">Tổng<span>{{$total_money}}đ</span></li>
+                        <li class="total">Tổng<span>{{number_format($total_money)}}<sup>đ</sup></span></li>
                     </ul>
                 </div>
             </div>

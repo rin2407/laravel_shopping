@@ -4,7 +4,7 @@
             <div class="title-section">
                 <div class="left-part">
                     <span>Sản phẩm</span>
-                    <h1>Sản phẩm bán chạy
+                    <h1>Sản phẩm nổi bật
                     </h1>
                 </div>
                 <div class="right-part">

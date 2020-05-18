@@ -30,7 +30,7 @@
                                 <div class="contact-info-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="contact-info-value">sparta.edu.vn@gmail.com</div>
+                                <div class="contact-info-value">info.vn@gmail.com</div>
                             </li>
                         </ul>
 

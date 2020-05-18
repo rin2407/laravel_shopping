@@ -76,7 +76,7 @@ class HomeController extends Controller
                       ->orderByDesc('products.product_id')
                       ->where('products.amount','>',0)
                       ->whereNull('products.deleted_at')
-                      ->get();
+                      ->paginate(6);
         $category_all= Category::all();
         $size_all=Size::all();
         return view('home.product.product-all',['product_all'=>$product_all,'category_all'=>$category_all,'size_all'=>$size_all]);

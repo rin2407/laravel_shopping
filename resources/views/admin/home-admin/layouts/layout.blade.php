@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        {{-- <link rel="SHORTCUT ICON" href="http://127.0.0.1:8000/images/a.jpg"> --}}
+        <title>LYN'S</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/metisMenu.min.css') }}" rel="stylesheet">
