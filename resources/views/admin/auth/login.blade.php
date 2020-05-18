@@ -70,6 +70,7 @@
                     @endif
                     </form>
                 </div>
+                <h2> {{ __('welcome to website') }}</h2>
             </div>
         </div>
     </div>

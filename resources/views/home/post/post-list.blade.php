@@ -3,11 +3,11 @@
         <div class="col-12">
             <div class="title-section">
                 <div class="left-part">
-                    <span>Tin tức</span>
-                    <h1>Tin tức gần đây</h1>
+                    <span>{{ __('news')}}</span>
+                    <h1>{{ __('recent new')}}</h1>
                 </div>
                 <div class="right-part">
-                    <a class=" button-one" href="# ">Xem tất cả</a>
+                    <a class=" button-one" href="{{ route('post.all')}}">{{ __('see it all')}}</a>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ use App\Category;
 use App\Image_product;
 use App\Banner;
 use App\Size;
+use Session;
 class HomeController extends Controller
 {
     /**
@@ -26,6 +27,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function changeLanguage($language)
+    {
+        \Session::put('lang', $language);
+    
+        return redirect()->back();
+    }
     public function index()
     {
 

@@ -3,12 +3,12 @@
         <div class="col-12">
             <div class="title-section">
                 <div class="left-part">
-                    <span>Sản phẩm</span>
-                    <h1>Sản phẩm bán chạy
+                    <span>{{ __('product') }}</span>
+                    <h1>{{ __('hot product') }}
                     </h1>
                 </div>
                 <div class="right-part">
-                    <a class=" button-one" href="{{route('product.all')}}">Xem tất cả</a>
+                    <a class=" button-one" href="{{route('product.all')}}">{{ __('see it all')}}</a>
                 </div>
             </div>
         </div>
@@ -23,10 +23,10 @@
                         <img class="pic-2" src="{{asset('images/products/'.$p_sell->image_name)}}">
                     </a>
                     <ul class="social">
-                            <li><a href="{{route('product.show',['id'=>$p_sell->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                            <li><a data-tip="Thêm vào giỏ hàng" data-product_id="{{$p_sell->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="{{route('product.show',['id'=>$p_sell->product_id])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
+                            <li><a data-tip="{{ __('add cart') }}" data-product_id="{{$p_sell->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
-                    <span class="product-new-label">New</span>
+                    <span class="product-new-label">{{ __('new')}}</span>
                     <span class="product-discount-label">-{{(round(100*($p_sell->unit_price-$p_sell->promo_price)/$p_sell->unit_price)) }}%</span>
                 </div>
                 <div class="product-content">
@@ -35,7 +35,7 @@
                         {{number_format($p_sell->promo_price)}}<sup>đ</sup>
                         <span>{{number_format($p_sell->unit_price)}}<sup>đ</sup></span>
                     </div>
-                    <a class="add-to-cart cart" data-product_id="{{$p_sell->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}">Thêm vào giỏ hàng</a>
+                    <a class="add-to-cart cart" data-product_id="{{$p_sell->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}">{{ __('add cart') }}</a>
                 </div>
             </div>
         </div>

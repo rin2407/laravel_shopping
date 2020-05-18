@@ -21,8 +21,11 @@ Auth::routes();
 Route::get('/contact',function(){
     return view('home.contact');
 });
-Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'home'], function () {
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('locale');
+Route::group(['prefix' => 'home','middleware' => 'locale'], function () {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+    ->name('user.change-language');
     Route::get('/product/{id}','HomeController@show')->name('product.show');
     Route::get('/product-all','HomeController@all')->name('product.all');
     Route::post('/product-search-ajax','HomeController@search');

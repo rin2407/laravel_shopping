@@ -19,10 +19,10 @@
                     </div>
                     <div class="pl-3">
                         <div class="b-style_main-title style_title-5 text-left">
-                            Sản phẩm chất lượng
+                            {{ __('product quality')}}
                         </div>
                         <div class="b-style_main-sumary style_sumary-5 pt-2">
-                            Chúng tôi cam kết sản phẩm chất lượng 100% từ màu sắc đến kiểu dáng đến chất liệu. </div>
+                            {{ __('commit')}} </div>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                     </div>
                     <div class="pl-3">
                         <div class="b-style_main-title style_title-5 text-left">
-                            Đa dạng mẫu mã
+                            {{ __('diversity')}}
                         </div>
                         <div class="b-style_main-sumary style_sumary-5 pt-2">
-                            Có rất nhiều mẫu mã cho khách hàng lựa chọn như quần jean, áo thun, áo khoát, váy đầm.</div>
+                            {{ __('there are many')}}</div>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                     </div>
                     <div class="pl-3">
                         <div class="b-style_main-title style_title-5 text-left">
-                            Miễn phí giao hàng
+                            {{ __('free ship')}}
                         </div>
                         <div class="b-style_main-sumary style_sumary-5 pt-2">
-                            Miễn phí giao hàng với hàng hàng trên 500.000đ</div>
+                            {{ __('free delivery')}}</div>
                     </div>
                 </div>
             </div>

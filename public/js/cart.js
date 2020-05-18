@@ -25,11 +25,11 @@ $(document).ready(function() {
                             toastr.success('Sản phẩm đã được thêm vào giỏ hàng thành công');
                             setTimeout(function() {
                                 location.reload();
-                            }, 500);
+                            }, 300);
                         }
                     }
                 });
-            }, 1000);
+            }, 500);
         } else {
             toastr.warning('Bạn cần đăng nhập để mua hàng');
         }
