@@ -5,17 +5,16 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="cart-table">
-                    <h3>Your Cart</h3>
+                    <h3>{{__('your cart')}}</h3>
                     <div class="cart-table-warp" tabindex="1" style="overflow: hidden; outline: none;">
                        <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="product-th">Sản phẩm</th>
-                                    <th class="quy-th">Số lượng</th>
-                                    {{-- <th class="size-th">SizeSize</th> --}}
-                                    <th class="total-th">Giá</th>
-                                    <th class="action-th">Thao tác</th>
+                                    <th class="product-th">{{__('product')}}</th>
+                                    <th class="quy-th">{{__('amount')}}</th>
+                                    <th class="total-th">{{__('price')}}</th>
+                                    <th class="action-th">{{__('action')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,9 +37,6 @@
                                                 <span class="inc qtybtn" data-amount-inc="{{$c_detail->amount}}" data-product-id="{{$c_detail->product_id}}">+</span></div>
                                         </div>
                                     </td>
-                                    {{-- <td class="size-col">
-                                        <h4>Size M</h4>
-                                    </td> --}}
                                     <td class="total-col">
                                         <h4>{{number_format($c_detail->promo_price * $c_detail->quantity)." ₫"}}</h4>
                                     </td>
@@ -55,7 +51,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td colspan="5">Giỏ hàng của bạn trống.</td>
+                                    <td colspan="5">{{__('cart is empty')}}</td>
                                 </tr>
                                 @endif
                             </tbody>
@@ -66,24 +62,24 @@
             </div>
             <div class="col-lg-4 card-right">
                 <div class="cart-table-2">
-                    <h3>Tổng tiền</h3>
+                    <h3>{{__('total money')}}</h3>
                     <table>
                         <tbody>
                             <tr>
-                                <th class="total-cost">Tổng tiền</th>
+                                <th class="total-cost">{{__('total money')}}</th>
                                 <td>{{number_format($total_money)." ₫"}}</td>
                             </tr>
                             <tr>
-                                <th>Tổng</th>
+                                <th>{{__('total')}}</th>
                                 <td>{{number_format($total_money)." ₫"}}</td>
                             </tr>
                         </tbody>
                     </table>
                     @if (count($cart_detail) > 0)
-                      <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">Tiến hành thanh toán</a>
+                      <a href="{{route('checkout.edit',['id'=>Auth::user()->id])}}" class="site-btn">{{__('proceed to payment')}}</a>
                     @endif
                 </div>
-                <a href="{{route('home')}}" class="site-btn sb-dark mt-5">Tiếp tục mua hàng</a>
+                <a href="{{route('home')}}" class="site-btn sb-dark mt-5">{{__('continue shopping')}}</a>
             </div>
 
             </div>

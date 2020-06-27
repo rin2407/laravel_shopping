@@ -18,19 +18,19 @@
         <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
             <div class="product-grid4">
                 <div class="product-image4">
-                    <a href="{{route('product.show',['id'=>$p_sell->product_id])}}">
+                    <a href="{{route('product.show',['name'=>$p_sell->product_name_slug])}}">
                         <img class="pic-1" src="{{asset('images/products/'.$p_sell->image_name)}}">
                         <img class="pic-2" src="{{asset('images/products/'.$p_sell->image_name)}}">
                     </a>
                     <ul class="social">
-                            <li><a href="{{route('product.show',['id'=>$p_sell->product_id])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
+                            <li><a href="{{route('product.show',['name'=>$p_sell->product_name_slug])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
                             <li><a data-tip="{{ __('add cart') }}" data-product_id="{{$p_sell->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                     <span class="product-new-label">{{ __('new')}}</span>
                     <span class="product-discount-label">-{{(round(100*($p_sell->unit_price-$p_sell->promo_price)/$p_sell->unit_price)) }}%</span>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="{{route('product.show',['id'=>$p_sell->product_id])}}">{{$p_sell->product_name}}</a></h3>
+                    <h3 class="title"><a href="{{route('product.show',['name'=>$p_sell->product_name_slug])}}">{{$p_sell->product_name}}</a></h3>
                     <div class="price">
                         {{number_format($p_sell->promo_price)}}<sup>đ</sup>
                         <span>{{number_format($p_sell->unit_price)}}<sup>đ</sup></span>

@@ -7,25 +7,25 @@
                 <form class="checkout-form" action={{route('checkout.update')}} method="POST">
                     @csrf
                     <div class="cf-title">
-                        Địa chỉ thanh toán</div>
+                        {{__('Payment address')}}</div>
                     <div class="row address-inputs">
                         <div class="col-md-12">
-                            <input type="text" placeholder="Địa chỉ" name="address" value={{$user->address}}>
+                            <input type="text" placeholder={{__('address')}} name="address" value={{$user->address}}>
                             @if($errors->has('address'))
                              <p style="color: red">{{$errors->first('address')}}</p>
                             @endif
-                            <input type="text" placeholder="Số điện thoại" name="phone" value={{$user->phone}}>
+                            <input type="text" placeholder={{__('phone')}} name="phone" value={{$user->phone}}>
                             @if($errors->has('phone'))
                            <p style="color: red">{{$errors->first('phone')}}</p>
                             @endif
                         </div>
                     </div>
-                    <button class="site-btn submit-order-btn">Đặt Hàng</button>
+                    <button class="site-btn submit-order-btn">{{__('order')}}</button>
                 </form>
             </div>
             <div class="col-lg-4 order-1 order-lg-2">
                 <div class="checkout-cart">
-                    <h3>Giỏ hàng của bạn</h3>
+                    <h3>{{__('your cart')}}</h3>
                     <ul class="product-list">
                         <?php $total_money=0 ?>
                         @foreach ($list_cart as $ls_cart)
@@ -37,9 +37,9 @@
                         @endforeach
                     </ul>
                     <ul class="price-list">
-                        <li>Tổng<span>{{$total_money}}đ</span></li>
+                        <li>{{__('total')}}<span>{{$total_money}}đ</span></li>
                         <li>Shipping<span>free</span></li>
-                        <li class="total">Tổng<span>{{$total_money}}đ</span></li>
+                        <li class="total">{{__('total')}}<span>{{$total_money}}đ</span></li>
                     </ul>
                 </div>
             </div>

@@ -18,7 +18,7 @@
                     <ul class="top-menu">
                         <li>
                             <form action="{{route('product.search')}}" method="get">
-                                <input type="text" placeholder="Nhập tìm kiếm.." aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
+                                <input type="text" placeholder={{__('search')}} aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
                                 @csrf
                                 <ul class="hienthitimkiem" >
                                 </ul>
@@ -67,7 +67,7 @@
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item shop">
-                                <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>Giỏ hàng</a>
+                                <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>{{__('cart')}}</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('home')}}">{{ __('home') }}<span class="sr-only">(current)</span></a>

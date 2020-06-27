@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\user_checkoutRequest;
 use Auth;
@@ -9,6 +7,7 @@ use DB;
 use App\User;
 use App\Order;
 use App\Order_item;
+use Illuminate\Support\Facades\Mail;
 class UserCheckoutController extends Controller
 {
     public function edit($id){
@@ -48,6 +47,12 @@ class UserCheckoutController extends Controller
             $order_item->quantity = $c_item->quantity;
             $order_item->save();
         }
+        return $this->send_mail();
+    }
+    public function send_mail(){
+        Mail::send('user.sendMail', array('email' => '1234'), function ($message){
+            $message->to(Auth::user()->email, 'Visitor')->subject('Reset pasword');
+        });
         return $this->update_amount_product();
     }
     public function update_amount_product(){

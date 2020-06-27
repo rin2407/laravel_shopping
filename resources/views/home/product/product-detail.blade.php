@@ -5,7 +5,7 @@
         <ul class="page-depth">
             <li><a href="{{route('home')}}"> {{ __('home')}}</a></li>
             <li class="bt"><a>{{ __('product detail')}}</a></li>
-            <li class="bt"><a href="{{route('product.show',['id'=>$p_detail->product_id])}}">{{$p_detail->product_name}}</a></li>
+            <li class="bt"><a href="{{route('product.show',['name'=>$p_detail->product_name_slug])}}">{{$p_detail->product_name}}</a></li>
 
 
         </ul>
@@ -147,7 +147,7 @@
                                 <button type="submit" class="btn btn-primary">{{ __('comment')}}</button>
                             </form>
                         </div>
-                        @if (count($list_comment)>0)
+                        {{-- @if (count($list_comment)>0)
                             @foreach ($list_comment as $ls_comment)
                             <div class="reviews">
                                 <div class="row blockquote review-item">
@@ -170,7 +170,7 @@
                             @endforeach
                         @else
                             
-                        @endif
+                        @endif --}}
                        
                     </div>
                 </div>
@@ -201,19 +201,19 @@
                 <div class="item">
                     <div class="product-grid4">
                         <div class="product-image4">
-                            <a href="{{route('product.show',['id'=>$relate->product_id])}}">
+                            <a href="{{route('product.show',['name'=>$relate->product_name_slug])}}">
                                 <img class="pic-1" src="{{asset('images/products/'.$relate->image_name)}}">
                                 <img class="pic-2" src="{{asset('images/products/'.$relate->image_name)}}">
                             </a>
                             <ul class="social">
-                                <li><a href="{{route('product.show',['id'=>$relate->product_id])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="{{route('product.show',['name'=>$relate->product_name_slug])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
                                 <li><a class="cart" data-tip=" {{ __('add cart')}}" data-product_id="{{$relate->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                             <span class="product-new-label"> {{ __('new')}}</span>
                             <span class="product-discount-label">-{{(round(100*($relate->unit_price-$relate->promo_price)/$relate->unit_price)) }}%</span>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="{{route('product.show',['id'=>$relate->product_id])}}">{{$relate->product_name}}</a></h3>
+                            <h3 class="title"><a href="{{route('product.show',['name'=>$relate->product_name_slug])}}">{{$relate->product_name}}</a></h3>
                             <div class="price">
                                 {{number_format($relate->promo_price)}}<sup>đ</sup>
                                 <span>{{number_format($relate->unit_price)}}<sup>đ</sup></span>

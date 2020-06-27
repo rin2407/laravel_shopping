@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\add_ProductRequest;
@@ -11,6 +9,7 @@ use App\Product;
 use App\Category;
 use App\Image_product;
 use DB;
+use Illuminate\Support\Str;
 class Productcontroller extends Controller
 {
     /**
@@ -52,6 +51,7 @@ class Productcontroller extends Controller
         $image->move('images/products', $image_name);
         $product=new Product();
         $product->product_name=$request->product_name;
+        $product->product_name_slug=Str::slug($request->product_name);
         $product->producer=$request->producer;
         $product->category_id=$request->category;
         $product->unit_price=$request->unit_price*1000;

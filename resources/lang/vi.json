@@ -29,6 +29,24 @@
    "your review" : "Đánh giá của bạn",
    "email address" : "Địa chỉ email",
    "comment" : "Bình luận",
-   "relate product" : "Sản phẩm liên quan"
-
+   "relate product" : "Sản phẩm liên quan",
+   "your cart": "Giỏ hàng của bạn",
+   "amount": "Số lượng",
+   "price":"Giá",
+   "action":"Thao tác",
+   "cart is empty":"Giỏ hàng của bạn trống",
+   "total money":"Tổng tiền",
+   "total":"Tổng",
+   "proceed to payment":"Tiến hành thanh toán",
+   "continue shopping":"Tiếp tục mua hàng",
+   "You want to delete the product from the cart?":"Bạn muốn xóa sản phẩm khỏi giỏ hàng",
+   "warning:":"Cảnh báo:",
+   "Product in your cart will be deleted":"Sản phẩm trong giỏ hàng của bạn sẽ bị xóa",
+   "close":"Đóng",
+   "delete":"Xóa",
+   "Payment address":"Địa chỉ thanh toán",
+   "address":"Địa chỉ",
+   "phone":"Số điện thoại",
+   "order":"Đặt hàng",
+   "search":"Nhập tìm kiếm..."
  }

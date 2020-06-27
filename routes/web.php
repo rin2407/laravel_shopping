@@ -19,30 +19,30 @@ Route::get('/', function () {
 //user
 Auth::routes();
 Route::get('/contact',function(){
+    // dd( Config::get('app.locale'));
     return view('home.contact');
 });
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('locale');
+Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+Route::get('/home.html', 'HomeController@index')->name('home')->middleware('locale');
 Route::group(['prefix' => 'home','middleware' => 'locale'], function () {
-    Route::get('change-language/{language}', 'HomeController@changeLanguage')
-    ->name('user.change-language');
-    Route::get('/product/{id}','HomeController@show')->name('product.show');
-    Route::get('/product-all','HomeController@all')->name('product.all');
+    Route::get('/product/{name}.html','HomeController@show')->name('product.show');
+    Route::get('/product-all.html','HomeController@all')->name('product.all');
     Route::post('/product-search-ajax','HomeController@search');
-    Route::get('/product-search','HomeController@product_search')->name('product.search');
-    Route::get('/post-all','PostController@index')->name('post.all');
+    Route::get('/product-search.html','HomeController@product_search')->name('product.search');
+    Route::get('/post-all.html','PostController@index')->name('post.all');
     Route::get('/post/{id}','PostController@show')->name('post.show');
 });
+
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
 Route::group(['prefix' => 'user','middleware'=>'auth'], function () {
     Route::post('/cart','CartController@store');
-    Route::get('/cart-detail','CartController@show')->name('cart.show');
+    Route::get('/cart-detail.html','CartController@show')->name('cart.show');
     Route::post('/cart/quantity-inc','CartController@update')->name('cart.update');
     Route::delete('/cart/cart-delete','CartController@destroy')->name('cart.destroy');
     Route::get('/checkout/{id}','UserCheckoutController@edit')->name('checkout.edit');
-    Route::post('/checkout','UserCheckoutController@update')->name('checkout.update');
-    Route::post('/feedback','FeedbackController@store')->name('feedback.store');
+    Route::post('/checkout.html','UserCheckoutController@update')->name('checkout.update');
+    Route::post('/feedback.html','FeedbackController@store')->name('feedback.store');
 });
 // admin
 Route::get('admin/login', 'Admin\LoginController@form_login')->name('login.form');
@@ -75,8 +75,6 @@ Route::group(['prefix' => 'admin','middleware'=>'checkadmin'], function () {
     Route::get('/post-list','Admin\PostController@index')->name('post.index');
     Route::get('/post-edit/{id}','Admin\PostController@edit')->name('post.edit');
     Route::post('/post-edit/{id}','Admin\PostController@update')->name('post.update');
-
-
     Route::delete('/post-delete','Admin\PostController@destroy')->name('post.destroy');
     Route::get('/banner-list','BannerController@index')->name('banner.index');
     Route::post('/banner-add','BannerController@store')->name('banner.store');
@@ -84,7 +82,4 @@ Route::group(['prefix' => 'admin','middleware'=>'checkadmin'], function () {
     Route::post('/banner/banner-action','BannerController@update')->name('banner.update');
     Route::get('/order-list','Admin\OrderController@index')->name('order.index');
     Route::post('/order-management/order','Admin\OrderController@update');
-
-
-
  });

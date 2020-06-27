@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use DB;
 use App\Product;
 use App\Category;
@@ -57,19 +57,19 @@ class HomeController extends Controller
         $list_banner= Banner::where('status','=',1)->get();
              return view('home.home',['product_new'=>$product_new,'product_sell'=>$product_sell,'list_post'=>$list_post,'list_banner'=>$list_banner]);
     }
-    public function show($id){
+    public function show($name){
         $product_detail= DB::table('products')
                           ->join('categories','products.category_id','categories.category_id')
                           ->join('image_products','image_products.product_id','products.product_id')
-                          ->where('products.product_id','=',$id)->first();
+                          ->where('products.product_name_slug','=',$name)->first();
                           DB::table('products')
                           ->join('categories','products.category_id','categories.category_id')
                           ->join('image_products','image_products.product_id','products.product_id')
-                          ->where('products.product_id','=',$id)->update(array('products.view_count'=>$product_detail->view_count+1));
-        $list_comment=DB::table('feedback_products')->join('feedback','feedback_products.feedback_id','=','feedback.feedback_id')
-                                                    ->join('users','feedback.id','=','users.id')
-                                                    ->orderByDesc('feedback.created_at')
-                                                    ->where('feedback_products.product_id',$product_detail->product_id)->get();
+                          ->where('products.product_name_slug','=',$name)->update(array('products.view_count'=>$product_detail->view_count+1));
+        $list_comment=DB::table('feedback')->join('users','feedback.id','=','users.id')
+                                            ->join('products','feedback.product_id','=','products.product_id')
+                                            ->orderByDesc('feedback.created_at')
+                                            ->where('products.product_name_slug',$product_detail->product_name_slug)->get();
         $product_relate= DB::table('products')
                           ->join('categories','products.category_id','categories.category_id')
                           ->join('image_products','image_products.product_id','products.product_id')

@@ -49,18 +49,18 @@
                     <div class="col-lg-4 col-sm-6">
                         <div class="product-grid4">
                             <div class="product-image4">
-                                <a href="{{route('product.show',['id'=>$p_all->product_id])}}">
+                                <a href="{{route('product.show',['name'=>$p_all->product_name_slug])}}">
                                     <img class="pic-1" src="{{asset('images/products/'.$p_all->image_name)}}">
                                     <img class="pic-2" src="{{asset('images/products/'.$p_all->image_name)}}">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="{{route('product.show',['id'=>$p_all->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="{{route('product.show',['name'=>$p_all->product_name_slug])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
                                     <li><a data-tip="Thêm vào giỏ hàng" data-product_id="{{$p_all->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}" class="cart"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                                 <span class="product-discount-label">-{{(round(100*($p_all->unit_price-$p_all->promo_price)/$p_all->unit_price)) }}%</span>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"><a href="{{route('product.show',['id'=>$p_all->product_id])}}">{{$p_all->product_name}}</a></h3>
+                                <h3 class="title"><a href="{{route('product.show',['name'=>$p_all->product_name_slug])}}">{{$p_all->product_name}}</a></h3>
                                 <div class="price">
                                     {{number_format($p_all->promo_price)}}<sup>đ</sup>
                                     <span>{{number_format($p_all->unit_price)}}<sup>đ</sup></span>
