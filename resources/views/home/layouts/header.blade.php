@@ -43,8 +43,6 @@
                                     <a class="dropdown-item" href="{{ route('login') }}">{{ __('login')}}</a>
                                     <a class="dropdown-item" href="{{ route('register') }}">{{ __('register')}}</a>
                                     @endif
-                                    
-
                                 </div>
                         </li>
                     </ul>
@@ -87,7 +85,8 @@
                         </li>
                         <li class="nav-item dropdown dmenu">
                             <a class="nav-link " href="new.html" id="navbardrop" data-toggle="dropdown">
-                          English<i class="fa fa-angle-down"></i>
+                                {{Config::get('app.locale')=='en' ? 'English' : 'Vietnamese' }}
+                          <i class="fa fa-angle-down"></i>
                         </a>
                             <div class="dropdown-menu sm-menu">
                                 <a class="dropdown-item" href="{{route('user.change-language', ['language'=>'en']) }}">English</a>
@@ -97,7 +96,7 @@
                     </ul>
 
                 </div>
-            <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number">{{$total_cart_product}}</span>{{ __('cart')}}</a>
+            <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number" data-total="{{$total_cart_product}}">{{$total_cart_product}}</span>{{ __('cart')}}</a>
             </nav>
         </div>
     </div>

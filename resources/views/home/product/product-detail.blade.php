@@ -73,9 +73,9 @@
                 <div class="quantity">
                     <p> {{ __('quantity')}}</p>
                     <div class="pro-qty">
-                        <span class="dec qtybtn">-</span>
+                        <span class="decb qtybtn">-</span>
                         <input type="text" value="1" class="count">
-                        <span class="inc qtybtn">+</span></div>
+                        <span class="incb qtybtn">+</span></div>
                 </div>
                 <a  class="site-btn cart" data-product_id="{{$p_detail->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}">{{ __('add cart')}}</a>
 
@@ -147,7 +147,7 @@
                                 <button type="submit" class="btn btn-primary">{{ __('comment')}}</button>
                             </form>
                         </div>
-                        {{-- @if (count($list_comment)>0)
+                        @if (count($list_comment)>0)
                             @foreach ($list_comment as $ls_comment)
                             <div class="reviews">
                                 <div class="row blockquote review-item">
@@ -170,7 +170,7 @@
                             @endforeach
                         @else
                             
-                        @endif --}}
+                        @endif
                        
                     </div>
                 </div>

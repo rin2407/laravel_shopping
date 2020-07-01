@@ -48,5 +48,6 @@
    "address":"Address",
    "phone":"Phone",
    "order":"Order",
-   "search":"Search..."
+   "search":"Search...",
+   "thanks":"Thank you for purchasing the product at our store. Below is a list of the products you have ordered"
 }

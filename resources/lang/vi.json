@@ -48,5 +48,7 @@
    "address":"Địa chỉ",
    "phone":"Số điện thoại",
    "order":"Đặt hàng",
-   "search":"Nhập tìm kiếm..."
+   "search":"Nhập tìm kiếm...",
+   "thanks":"Cảm ơn bạn đã mua sản phẩm tại cửa hàng của chúng tôi. Dưới đây là danh sách các sản phẩm bạn đã đặt hàng"
+
  }

@@ -50,8 +50,14 @@ class UserCheckoutController extends Controller
         return $this->send_mail();
     }
     public function send_mail(){
-        Mail::send('user.sendMail', array('email' => '1234'), function ($message){
-            $message->to(Auth::user()->email, 'Visitor')->subject('Reset pasword');
+        $order_detail= DB::table('cart_items')
+                        ->join('carts','cart_items.cart_id','=','carts.cart_id')
+                        ->join('users','carts.id','=','users.id')
+                        ->join('products','cart_items.product_id','=','products.product_id')
+                        ->where('carts.id',Auth::user()->id)
+                        ->get();
+        Mail::send('user.sendMail', array('order_detail' =>$order_detail), function ($message){
+            $message->to(Auth::user()->email, 'Visitor')->subject('Cart order');
         });
         return $this->update_amount_product();
     }

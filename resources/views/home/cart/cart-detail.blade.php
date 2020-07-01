@@ -67,11 +67,11 @@
                         <tbody>
                             <tr>
                                 <th class="total-cost">{{__('total money')}}</th>
-                                <td>{{number_format($total_money)." ₫"}}</td>
+                                <td class="cost-price">{{number_format($total_money)." ₫"}}</td>
                             </tr>
                             <tr>
                                 <th>{{__('total')}}</th>
-                                <td>{{number_format($total_money)." ₫"}}</td>
+                                <td class="cost-price-continue">{{number_format($total_money)." ₫"}}</td>
                             </tr>
                         </tbody>
                     </table>
