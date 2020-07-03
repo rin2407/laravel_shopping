@@ -6,7 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/icon_115004_1571992573_13.png')}}">
+    <LINK REL="SHORTCUT ICON"  HREF="{{asset('images/logolyn.png')}}">
     <title>{{ config('app.name', 'LYNS') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,9 +25,8 @@
     @yield('css')
 </head>
 <body>
-    @include('home.layouts.header')
     @yield('content')
-    @include('home.layouts.footer')
+    {{-- @include('home.layouts.footer') --}}
     {{-- js --}}
     <script src="{{ asset('bootstrap/js/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>

@@ -18,11 +18,11 @@
                     <ul class="top-menu">
                         <li>
                             <form action="{{route('product.search')}}" method="get">
-                                <input type="text" placeholder="Nhập tìm kiếm.." aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
+                                <input type="text" placeholder="{{__('search')}}" aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
                                 @csrf
                                 <ul class="hienthitimkiem" >
                                 </ul>
-                                <button type="submit" style="display:none"></button>
+                                <button type="submit" style="display:none">Search</button>
                             </form>
 
                         </li>
@@ -35,16 +35,14 @@
                                     @if (Auth::check())
                                     <a class="dropdown-item">{{Auth::user()->name }}</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">Đăng xuất</a>
+                                    document.getElementById('logout-form').submit();">{{ __('logout')}}</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                     @else
-                                    <a class="dropdown-item" href="{{ route('login') }}">Đăng nhập</a>
-                                    <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
+                                    <a class="dropdown-item" href="{{ route('login') }}">{{ __('login')}}</a>
+                                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('register')}}</a>
                                     @endif
-                                    
-
                                 </div>
                         </li>
                     </ul>
@@ -56,9 +54,9 @@
     <div class="menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light pb-2">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('home')}}">
                     <span class="logo-text">
-                    <img src="{{asset('images/logolyn.PNG')}}" alt="">
+                    <img src="{{asset('images/icon_115004_1571992573_13.png')}}" style="width:70px" alt="">
                 </span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,30 +65,38 @@
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item shop">
-                                <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>Giỏ hàng</a>
+                                <a href="{{ route('cart.show') }}" class="nav-link shop-icon"> <i class="fas fa-shopping-cart"></i>{{__('cart')}}</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('home')}}">Trang chủ<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('home')}}">{{ __('home') }}<span class="sr-only">(current)</span></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.all')}}">
-                           Sản phẩm</a>
+                           {{ __('product') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('post.all')}}">
-                          Tin tức
+                                {{ __('news') }}
                         </a>
                         </li>
-
-
                         <li class="nav-item">
-                            <a class="nav-link " href="{{url('/contact')}}">Liên hệ</a>
+                            <a class="nav-link " href="{{url('/contact')}}">{{ __('contact') }}</a>
+                        </li>
+                        <li class="nav-item dropdown dmenu">
+                            <a class="nav-link " href="new.html" id="navbardrop" data-toggle="dropdown">
+                                {{Config::get('app.locale')=='en' ? 'English' : 'Vietnamese' }}
+                          <i class="fa fa-angle-down"></i>
+                        </a>
+                            <div class="dropdown-menu sm-menu">
+                                <a class="dropdown-item" href="{{route('user.change-language', ['language'=>'en']) }}">English</a>
+                                <a class="dropdown-item" href="{{ route('user.change-language', ['language'=>'vi']) }}">Vietnamese</a>
+                            </div>
                         </li>
                     </ul>
 
                 </div>
-            <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number">{{$total_cart_product}}</span> Giỏ hàng</a>
+            <a href="{{route('cart.show')}}" class="register-modal-opener login-button shop-icon"> <i class="fas fa-shopping-cart"></i> <span class="cart-number" data-total="{{$total_cart_product}}">{{$total_cart_product}}</span>{{ __('cart')}}</a>
             </nav>
         </div>
     </div>

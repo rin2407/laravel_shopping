@@ -6,7 +6,7 @@
                @csrf
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title text-center" id="custom-width-modalLabel">Deleted {{$ls_size->size_name}}</h4>
+                <h4 class="modal-title text-center" id="custom-width-modalLabel">Xóa {{$ls_size->size_name}}</h4>
             </div>
             <div class="modal-body">
                 <h4>Are you sure you want to delete?</h4>

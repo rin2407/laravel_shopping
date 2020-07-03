@@ -1,5 +1,4 @@
-@extends('home.layouts.app')
-
+@extends('admin.home-admin.layouts.login_layout');
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -54,12 +53,12 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Đăng nhập') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                    <a class="btn btn-link" href="#">
+                                        {{ __('Quên mật khẩu?') }}
                                     </a>
                                 @endif
                             </div>
@@ -71,6 +70,7 @@
                     @endif
                     </form>
                 </div>
+                <h2> {{ __('welcome to website') }}</h2>
             </div>
         </div>
     </div>

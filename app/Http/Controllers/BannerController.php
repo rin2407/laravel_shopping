@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Banner;
 use DB;
+use validate;
 class BannerController extends Controller
 {
     public function index(){
@@ -12,6 +13,9 @@ class BannerController extends Controller
         return view('admin.home-admin.banner-list',['list_banner'=>$list_banner]);
     }
     public function store(Request $request){
+        $validatedData = $request->validate([
+            'image' => 'required|image',
+        ]);
         $image=$request->file('image');
         $image_name=$image->getClientOriginalName('image');
         $image->move('images/banners', $image_name);

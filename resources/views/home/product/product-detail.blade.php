@@ -3,9 +3,9 @@
 <section class="page-banner-section my-4">
     <div class="container">
         <ul class="page-depth">
-            <li><a href="{{route('home')}}">Trang chủ</a></li>
-            <li class="bt"><a>Chi tiết sản phẩm</a></li>
-            <li class="bt"><a href="{{route('product.show',['id'=>$p_detail->product_id])}}">{{$p_detail->product_name}}</a></li>
+            <li><a href="{{route('home')}}"> {{ __('home')}}</a></li>
+            <li class="bt"><a>{{ __('product detail')}}</a></li>
+            <li class="bt"><a href="{{route('product.show',['name'=>$p_detail->product_name_slug])}}">{{$p_detail->product_name}}</a></li>
 
 
         </ul>
@@ -71,13 +71,13 @@
                     </div>
                 </div>
                 <div class="quantity">
-                    <p>Quantity</p>
+                    <p> {{ __('quantity')}}</p>
                     <div class="pro-qty">
-                        <span class="dec qtybtn">-</span>
+                        <span class="decb qtybtn">-</span>
                         <input type="text" value="1" class="count">
-                        <span class="inc qtybtn">+</span></div>
+                        <span class="incb qtybtn">+</span></div>
                 </div>
-                <a  class="site-btn cart" data-product_id="{{$p_detail->product_id}}">Thêm vào giỏ hàng</a>
+                <a  class="site-btn cart" data-product_id="{{$p_detail->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}">{{ __('add cart')}}</a>
 
             </div>
         </div>
@@ -86,8 +86,8 @@
             <div class="col-8 ">
                 <nav>
                     <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Mô tả sản phẩm</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Đánh giá khách hàng</a>
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">{{ __('product description')}}</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">{{ __('customer feedback')}}</a>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
@@ -95,7 +95,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <td class="name">Tên sản phẩm</td>
+                                    <td class="name"> {{ __('product name')}}</td>
                                     <td>{{$p_detail->product_name}}</td>
                                 </tr>
                                 <tr>
@@ -110,13 +110,13 @@
                                 </tr>
                                 <tr>
 
-                                    <td class="name">Mô tả</td>
+                                    <td class="name"> {{ __('description')}}</td>
                                     <td>{{$p_detail->describe}}</td>
 
                                 </tr>
                                 <tr>
 
-                                    <td class="name">Lượt xem</td>
+                                    <td class="name"> {{ __('view')}}</td>
                                     <td>{{$p_detail->view_count}}</td>
 
                                 </tr>
@@ -125,11 +125,11 @@
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <div class="reviews">
-                            <h5>Đánh giá của bạn</h5>
+                            <h5> {{ __('your review')}}</h5>
                             <form action={{route('feedback.store')}} method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Địa chỉ email</label>
+                                    <label for="exampleFormControlInput1"> {{ __('email address')}}</label>
                                     @if (Auth::check())
                                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" value="{{ Auth::user()->email}}" disabled>
                                     @else
@@ -141,10 +141,10 @@
                                 <input type="hidden" class="form-control" name="user_id" id="exampleFormControlInput1" value="{{Auth::User()->id}}">     
                                 @endif
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Đánh giá của bạn</label>
+                                    <label for="exampleFormControlTextarea1">{{ __('your review')}}</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Bình luận</button>
+                                <button type="submit" class="btn btn-primary">{{ __('comment')}}</button>
                             </form>
                         </div>
                         @if (count($list_comment)>0)
@@ -184,12 +184,12 @@
             <div class="col-12">
                 <div class="title-section">
                     <div class="left-part">
-                        <span>Sản phẩm</span>
-                        <h1>Sản phẩm liên quan
+                        <span> {{ __('product')}}</span>
+                        <h1>{{ __('relate product')}}
                         </h1>
                     </div>
                     <div class="right-part">
-                        <a class=" button-one" href="{{route('product.all')}}">Xem tất cả</a>
+                        <a class=" button-one" href="{{route('product.all')}}"> {{ __('see it all')}}</a>
                     </div>
                 </div>
             </div>
@@ -201,24 +201,24 @@
                 <div class="item">
                     <div class="product-grid4">
                         <div class="product-image4">
-                            <a href="#">
+                            <a href="{{route('product.show',['name'=>$relate->product_name_slug])}}">
                                 <img class="pic-1" src="{{asset('images/products/'.$relate->image_name)}}">
                                 <img class="pic-2" src="{{asset('images/products/'.$relate->image_name)}}">
                             </a>
                             <ul class="social">
-                                <li><a href="{{route('product.show',['id'=>$relate->product_id])}}" data-tip="Chi tiết sản phẩm"><i class="fa fa-eye"></i></a></li>
-                                <li><a class="cart" data-tip="Thêm vào giỏ hàng" data-product_id="{{$relate->product_id}}"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{route('product.show',['name'=>$relate->product_name_slug])}}" data-tip="{{ __('product detail')}}"><i class="fa fa-eye"></i></a></li>
+                                <li><a class="cart" data-tip=" {{ __('add cart')}}" data-product_id="{{$relate->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
-                            <span class="product-new-label">New</span>
+                            <span class="product-new-label"> {{ __('new')}}</span>
                             <span class="product-discount-label">-{{(round(100*($relate->unit_price-$relate->promo_price)/$relate->unit_price)) }}%</span>
                         </div>
                         <div class="product-content">
-                            <h3 class="title"><a href="#">{{$relate->product_name}}</a></h3>
+                            <h3 class="title"><a href="{{route('product.show',['name'=>$relate->product_name_slug])}}">{{$relate->product_name}}</a></h3>
                             <div class="price">
                                 {{number_format($relate->promo_price)}}<sup>đ</sup>
                                 <span>{{number_format($relate->unit_price)}}<sup>đ</sup></span>
                             </div>
-                            <a class="add-to-cart cart" data-product_id="{{$relate->product_id}}">Thêm vào giỏ hàng</a>
+                            <a class="add-to-cart cart" data-product_id="{{$relate->product_id}}" data-user="{{ Auth::check() ? '1' : '0'}}"> {{ __('add cart')}}</a>
                         </div>
                     </div>
                 </div>

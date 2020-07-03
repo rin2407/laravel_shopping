@@ -14,10 +14,10 @@
                     <div class="container-fluid">
                     <div class="row panel-heading">
                       
-                        <div class="col-md-6 title">banner List</div>
+                        <div class="col-md-6 title">Danh sách banner</div>
                         <div class="col-md-6  text-right">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                                Add banner
+                               Thêm banner
                               </button>
                               @include('admin.home-admin.modal.modal_add_banner')
                         </div>
@@ -30,10 +30,10 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Image</th>
-                                        <th>Create_at</th>
-                                        <th>Hide/Show</th>
-                                        <th>Action</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Tạo lúc</th>
+                                        <th>Ẩn/Hiện</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,11 +46,11 @@
                                         <td>
                                             <select class="form-control banner" id="exampleFormControlSelect1" data-idBanner="{{$ls_banner->id}}">
                                                 @if ($ls_banner->status ==1)
-                                                <option value="1" selected>Show Banner</option>
-                                                <option value="0">Hide Banner</option>
+                                                <option value="1" selected>Hiện Banner</option>
+                                                <option value="0">Ẩn Banner</option>
                                                 @else
-                                                <option value="1">Show Banner</option>
-                                                <option value="0" selected>Hide Banner</option>
+                                                <option value="1">Hiện Banner</option>
+                                                <option value="0" selected>Ẩn Banner</option>
                                                 @endif
                                                 
                                               </select>

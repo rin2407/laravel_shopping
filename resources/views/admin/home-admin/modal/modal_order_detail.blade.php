@@ -19,9 +19,9 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Product name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
                       </tr>
                     </thead>
                     <tbody>

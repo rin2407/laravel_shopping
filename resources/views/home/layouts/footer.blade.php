@@ -41,10 +41,10 @@
                     <div class="footer-widget quick-widget">
                         <h2>Công ty</h2>
                         <ul class="quick-list">
-                            <li><a href="contact.html">Trang chủ</a></li>
-                            <li><a href="pricing.html">Sản phẩm</a></li>
-                            <li><a href="about.html">Tin tức</a></li>
-                            <li><a href="courses.html">Liên hệ</a></li>
+                            <li><a href="{{route('home')}}">{{ __('home')}}</a></li>
+                            <li><a href="{{route('product.all')}}">{{ __('product')}}</a></li>
+                            <li><a href="{{route('post.all')}}">{{ __('news')}}</a></li>
+                            <li><a href="{{url('/contact')}}">{{ __('contact')}}</a></li>
 
                         </ul>
                     </div>

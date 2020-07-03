@@ -14,7 +14,7 @@
                     <div class="container-fluid">
                     <div class="row panel-heading">
                       
-                        <div class="col-md-6 title">Order List</div>
+                        <div class="col-md-6 title">Danh sách đơn hàng</div>
                     </div>
                     </div>
                     <!-- /.panel-heading -->
@@ -25,12 +25,12 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>User name</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
-                                        <th>Total money</th>
-                                        <th>Status order</th>
-                                        <th>Action</th>
+                                        <th>Tên người dùng</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Số điện thoại</th>
+                                        <th> Tổng tiền</th>
+                                        <th>Tình trạng đơn hàng </th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -49,8 +49,28 @@ class PostController extends Controller
         ->first();
         return view('admin.home-admin.post.post-edit',['post_edit'=>$post_edit]);
     }
-    public function update($id){
-        
+    public function update($id,Request $request){
+        if($request->has('image')){
+            $image=$request->file('image');
+            $image_name=$image->getClientOriginalName('image');
+            $image->move('images/posts', $image_name);
+        $post_update= Post::findOrFail($id);
+        $post_update->post_title=$request->post_name;
+        $post_update->image_post=$image_name;
+        $post_update->save();
+        $post_update_detail=Post_detail::findOrFail($id);
+        $post_update_detail->post_detail=$request->post_detail;
+        $post_update_detail->save();
+        return redirect()->route('post.index');
+        }else{
+            $post_update= Post::findOrFail($id);
+        $post_update->post_title=$request->post_name;
+        $post_update->save();
+        $post_update_detail=Post_detail::findOrFail($id);
+        $post_update_detail->post_detail=$request->post_detail;
+        $post_update_detail->save();
+        return redirect()->route('post.index');
+        }
 
     }
     public function destroy(Request $request){

@@ -3,11 +3,11 @@
         <div class="col-12">
             <div class="title-section">
                 <div class="left-part">
-                    <span>Tin tức</span>
-                    <h1>Tin tức gần đây</h1>
+                    <span>{{ __('news')}}</span>
+                    <h1>{{ __('recent new')}}</h1>
                 </div>
                 <div class="right-part">
-                    <a class=" button-one" href="# ">Xem tất cả</a>
+                    <a class=" button-one" href="{{ route('post.all')}}">{{ __('see it all')}}</a>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="item">
                 <div class=" section-bs5 ">
                     <div class="b-style_main-img ">
-                        <img src="{{asset('images/posts/'.$ls_post->image_post)}}" alt=" " class="img-responsive " width="100%">
+                       <a href="{{route('post.show',['id'=>$ls_post->post_id])}}"> <img src="{{asset('images/posts/'.$ls_post->image_post)}}" alt=" " class="img-responsive " width="100%"></a>
                     </div>
                     <div class="course-content-main">
                         <h2 class="course-title">

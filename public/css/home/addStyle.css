@@ -3291,7 +3291,7 @@ ul.category-menu {
 
 .checkout-cart .price-list li span {
     float: right;
-    width: 60px;
+    width: 90px;
     text-align: left
 }
 
@@ -3422,4 +3422,9 @@ button.delete i {
 .user .form-control:focus {
     outline: none!important;
     box-shadow: none!important;
+}
+
+
+.shop-mb__10x{
+    margin-bottom: 10px;
 }

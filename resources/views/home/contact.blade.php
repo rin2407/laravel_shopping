@@ -21,14 +21,14 @@
                             <li>
 
                                 <div class="contact-info-value-title">
-                                    Trụ Sở Chính Công ty CP Giáo Dục SPARTA VN (CS1)
+                                   TRUNG TÂM THỜI TRANG LYN'S
                                 </div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <div class="contact-info-value">69-71 Bùi Dương Lịch, Q. Sơn Trà, TP Đà Nẵng</div>
+                                <div class="contact-info-value">114 Đồng Bài, Hòa Minh,Liên Chiểu,Đà Nẵng</div>
                             </li>
                             <li>
                                 <div class="contact-info-icon">
@@ -40,7 +40,7 @@
                                 <div class="contact-info-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="contact-info-value">sparta.edu.vn@gmail.com</div>
+                                <div class="contact-info-value">info@gmail.com</div>
                             </li>
                         </ul>
                     </div>

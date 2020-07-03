@@ -12,7 +12,7 @@
             <div class="col-lg-12" style="padding-top: 20px">
                 <div class="panel panel-default">
                     <div class="panel-heading title">
-                        User List
+                       Danh sách người dùng
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -20,11 +20,11 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>Tên</th>
                                         <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Phone</th>
-                                        <th>Action</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>

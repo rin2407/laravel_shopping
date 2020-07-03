@@ -5,10 +5,10 @@
                 <a href="{{route('dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
-                <a href="{{route('user.index')}}"><i class="fa fa-user"></i>User Management</a>
+                <a href="{{route('user.index')}}"><i class="fa fa-user"></i>Quản lí người dùng</a>
             </li>
             <li>
-                <a href="{{route('category.index')}}"><i class="fa fa-table fa-fw"></i>Category management</a>
+                <a href="{{route('category.index')}}"><i class="fa fa-table fa-fw"></i>Quản lí loại sản phẩm</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i>Management<span class="fa arrow"></span></a>
@@ -23,25 +23,25 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-product-hunt"></i>Product Management<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-product-hunt"></i>Quản lí sản phẩm<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('product.index')}}"><i class="fa fa-list-ol"></i>Product List</a>
+                        <a href="{{route('product.index')}}"><i class="fa fa-list-ol"></i>Danh sách sản phẩm</a>
                     </li>
                     <li>
-                        <a href="{{route('product.create')}}"><i class="fa fa-plus-square"></i>Add Product</a>
+                        <a href="{{route('product.create')}}"><i class="fa fa-plus-square"></i>Thêm sản phẩm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="{{route('banner.index')}}"><i class="fa fa-edit fa-fw"></i>Banner Management</a>
+                <a href="{{route('banner.index')}}"><i class="fa fa-edit fa-fw"></i>Quản lí banner</a>
             </li>
             <li>
-                <a href="{{route('order.index')}}"><i class="fa fa-edit fa-fw"></i>Order Management</a>
+                <a href="{{route('order.index')}}"><i class="fa fa-edit fa-fw"></i> Quản lí đơn hàng</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-fw"></i>Order Mangement<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-sitemap fa-fw"></i>Đơn hàng<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="#">Se</a>
@@ -71,13 +71,13 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i>Post Management<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i>Quản lí tin tức <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('post.index')}}">Post List</a>
+                        <a href="{{route('post.index')}}">Danh sách tin tức</a>
                     </li>
                     <li>
-                        <a href="{{route('post.create')}}">Add Post</a>
+                        <a href="{{route('post.create')}}">Thêm tin tức</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

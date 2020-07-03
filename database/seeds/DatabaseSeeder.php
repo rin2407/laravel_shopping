@@ -25,10 +25,13 @@ class DatabaseSeeder extends Seeder
                 ['size_name'=>'XL'],                      
             ]);
             DB::table('categories')->insert([
-                ['category_name'=>'Coat'],  
-                ['category_name'=>'Dress'],            
-                ['category_name'=>'jacket'],
-                ['category_name'=>'jeans'],                                            
+                ['category_name'=>'Giày Oxford (Cap Toe Oxford)'],  
+                ['category_name'=>'Giày Brogues'],            
+                ['category_name'=>'Giày Boat Shoes'],
+                ['category_name'=>'Driver shoes (Driving loafer)'],
+                ['category_name'=>'Giày Penny loafer'],                                            
+                ['category_name'=>'Giày Monk strap'],                                            
+                ['category_name'=>'Giày thể thao'],                                                                         
             ]);
             DB::table('status_orders')->insert([
                 ['status_order_name'=>'Đang đợi xác nhận'],  

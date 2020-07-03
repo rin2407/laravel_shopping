@@ -14,10 +14,10 @@
                     <div class="container-fluid">
                     <div class="row panel-heading">
                     
-                        <div class="col-md-6 title">Post List</div>
+                        <div class="col-md-6 title"> Danh sách tin tức</div>
                         <div class="col-md-6 text-right">
                             <a  href="{{ route('post.create')}}"type="button" class="btn btn-primary mr-2">
-                                Add Post
+                                Thêm tin tức
                             </a>                       
                     </div>
                 </div>
@@ -29,12 +29,12 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Name</th>
-                                        <th>Detail</th>
-                                        <th>Image</th>
-                                        <th>Create_at</th>
-                                        <th>Update_at</th>
-                                        <th>Action</th>
+                                        <th>Tên</th>
+                                        <th>Chi tiết</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Tạo lúc</th>
+                                        <th>Cập nhật lúc</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>

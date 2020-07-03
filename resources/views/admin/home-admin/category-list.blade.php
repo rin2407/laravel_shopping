@@ -14,10 +14,10 @@
                     <div class="container-fluid">
                     <div class="row panel-heading">
                     
-                        <div class="col-md-6 title">Category List</div>
+                        <div class="col-md-6 title">Danh sách loại sản phẩm</div>
                         <div class="col-md-6 text-right">
                             <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#staticBackdrop">
-                                Add category
+                                Thêm sản phẩm
                               </button>
                               @include('admin.home-admin.modal.modal_add_category')
                        
@@ -31,10 +31,10 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Name</th>
-                                        <th>Create_at</th>
-                                        <th>Update_at</th>
-                                        <th>Action</th>
+                                        <th>Tên</th>
+                                        <th>Tạo lúc</th>
+                                        <th>Cập nhật lúc</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody>
