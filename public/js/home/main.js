@@ -110,7 +110,7 @@ $('.owl5').owlCarousel({
 new WOW().init();
 
 window.onscroll = function() {
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
     var nav = document.getElementById('menu-header');
     if (window.pageYOffset > 10) {
         nav.classList.add("scrolled");

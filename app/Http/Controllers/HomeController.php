@@ -73,6 +73,7 @@ class HomeController extends Controller
         $product_relate= DB::table('products')
                           ->join('categories','products.category_id','categories.category_id')
                           ->join('image_products','image_products.product_id','products.product_id')
+                          ->whereNull('products.deleted_at')
                           ->where('products.category_id','=',$product_detail->category_id)->get();
         return view('home.product.product-detail',['p_detail'=>$product_detail,'p_relate'=>$product_relate,'list_comment'=>$list_comment]);
     }
@@ -88,31 +89,6 @@ class HomeController extends Controller
         $size_all=Size::all();
         return view('home.product.product-all',['product_all'=>$product_all,'category_all'=>$category_all,'size_all'=>$size_all]);
     }
-    public function search(Request $request){
-        $txttimkiem=$request->get('txt');
-        $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
-                                             ->join('categories','products.category_id','=','categories.category_id')
-                                             ->where('products.amount','>',0)
-                                             ->whereNull('products.deleted_at')
-                                             ->where('product_name','LIKE','%'.$txttimkiem.'%')->get();
-      $total=count($product_search);
-      if($total >0){
-        echo "<li> Có ".$total." sản phẩm bạn cần tìm </li>"; 
-        echo "<br/>";
-        foreach($product_search as $p_search){
-          ?>
-       <li class="search" >
-          <div class="d-flex">
-          <img src="<?php echo asset('images/products/'.$p_search->image_name) ?>">
-          <a href="<?php echo route('product.show',['id'=>$p_search->product_id]) ?>"> <?php echo $p_search->product_name ?></a>
-          </div>  
-      </li>
-          <?php
-        }
-      }else{
-        echo "Không có sản phẩm bạn tìm kiếm";
-          }
-    }
     public function product_search(){
       $txt = ($_GET['search']);
       $product_search=DB::table('products')->join('image_products','image_products.product_id','=','products.product_id')
@@ -121,4 +97,5 @@ class HomeController extends Controller
       return view('home.product.product-search',['product_search'=>$product_search]);
 
     }
+    
 }

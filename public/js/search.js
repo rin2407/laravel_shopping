@@ -3,6 +3,11 @@ $(document).ready(function() {
     $("#search").keyup(function() {
         clearTimeout(timeout);
         var txt = $('#search').val();
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+          });          
         var _token = $('input[name="_token"]').val();
         var origin = window.location.origin;
         if (txt == "") {

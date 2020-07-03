@@ -49,5 +49,8 @@
    "phone":"Phone",
    "order":"Order",
    "search":"Search...",
-   "thanks":"Thank you for purchasing the product at our store. Below is a list of the products you have ordered"
+   "thanks":"Thank you for purchasing the product at our store. Below is a list of the products you have ordered",
+   "product all":"Product all",
+   "category":"Category",
+   "product not found":"Product not found"
 }

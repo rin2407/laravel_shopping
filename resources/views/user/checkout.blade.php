@@ -10,11 +10,11 @@
                         {{__('Payment address')}}</div>
                     <div class="row address-inputs">
                         <div class="col-md-12">
-                            <input type="text" placeholder={{__('address')}} name="address" value={{$user->address}}>
+                            <input type="text" placeholder="{{__('address')}}" name="address" value="{{$user->address}}">
                             @if($errors->has('address'))
                              <p style="color: red">{{$errors->first('address')}}</p>
                             @endif
-                            <input type="text" placeholder={{__('phone')}} name="phone" value={{$user->phone}}>
+                            <input type="text" placeholder="{{__('phone')}}" name="phone" value={{$user->phone}}>
                             @if($errors->has('phone'))
                            <p style="color: red">{{$errors->first('phone')}}</p>
                             @endif

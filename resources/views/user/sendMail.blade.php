@@ -14,10 +14,10 @@
       @foreach ($order_detail as $item)
       <tr>
         <th>{{$i++}}</th>
-        <td>{{$item->product_name}}</td>
-        <td>{{$item->promo_price}}</td>
-        <td>{{$item->quantity}}</td>
-        <td>{{number_format($item->quantity*$item->promo_price)}}</td>
+        <td class="text-center">{{$item->product_name}}</td>
+        <td class="text-center">{{$item->promo_price}}</td>
+        <td class="text-center">{{$item->quantity}}</td>
+        <td class="text-center">{{number_format($item->quantity*$item->promo_price)}}</td>
       </tr>
       @endforeach
     </tbody>

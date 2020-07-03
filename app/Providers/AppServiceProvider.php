@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
                 $user_id=Auth::User()->id;
                 $total_cart=DB::table('carts')->join('cart_items','cart_items.cart_id','=','carts.cart_id')
                                               ->join('products','cart_items.product_id','=','products.product_id')
+                                              ->whereNull('products.deleted_at')
                                               ->where('carts.id',$user_id)->get();
                 $total_product=count($total_cart);
                 $view->with(['total_cart_product'=>$total_product]);

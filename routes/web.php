@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,11 @@ Route::get('/contact',function(){
 });
 Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
 Route::get('/home.html', 'HomeController@index')->name('home')->middleware('locale');
-Route::group(['prefix' => 'home','middleware' => 'locale'], function () {
+Route::group(['prefix' =>'home','middleware' => 'locale'], function () {
     Route::get('/product/{name}.html','HomeController@show')->name('product.show');
     Route::get('/product-all.html','HomeController@all')->name('product.all');
-    Route::post('/product-search-ajax','HomeController@search');
+    Route::post('/product-search-ajax','AjaxController@search');
+    Route::post('/select-category-ajax','AjaxController@select_category');
     Route::get('/product-search.html','HomeController@product_search')->name('product.search');
     Route::get('/post-all.html','PostController@index')->name('post.all');
     Route::get('/post/{id}','PostController@show')->name('post.show');

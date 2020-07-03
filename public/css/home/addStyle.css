@@ -3423,3 +3423,8 @@ button.delete i {
     outline: none!important;
     box-shadow: none!important;
 }
+
+
+.shop-mb__10x{
+    margin-bottom: 10px;
+}

@@ -31,8 +31,10 @@
 
 .hienthitimkiem li.search a {
     font-weight: initial;
-    font-size: 15px;
+    font-size: 0.8em;
     color: black;
+    text-align: left;
+    padding-left: 0.5em;
 }
 
 .hienthitimkiem li.search img {
@@ -44,4 +46,8 @@
 
 .cart {
     cursor: pointer;
+}
+.no-search{
+    font-size: 0.9em;
+    text-align: center;
 }

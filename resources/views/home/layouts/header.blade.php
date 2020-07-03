@@ -18,7 +18,7 @@
                     <ul class="top-menu">
                         <li>
                             <form action="{{route('product.search')}}" method="get">
-                                <input type="text" placeholder={{__('search')}} aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
+                                <input type="text" placeholder="{{__('search')}}" aria-label="Username" id="search" aria-describedby="basic-addon1" name="search" autocomplete="off">
                                 @csrf
                                 <ul class="hienthitimkiem" >
                                 </ul>
@@ -56,7 +56,7 @@
             <nav class="navbar navbar-expand-lg navbar-light pb-2">
                 <a class="navbar-brand" href="{{route('home')}}">
                     <span class="logo-text">
-                    <img src="{{asset('images/logolyn.PNG')}}" alt="">
+                    <img src="{{asset('images/icon_115004_1571992573_13.png')}}" style="width:70px" alt="">
                 </span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

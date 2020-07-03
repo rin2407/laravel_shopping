@@ -69,6 +69,7 @@ class CartController extends Controller
         $cart_detail=DB::table('carts')->join('cart_items','cart_items.cart_id','=','carts.cart_id')
                                       ->join('products','cart_items.product_id','=','products.product_id')
                                       ->join('image_products','image_products.product_id','=','products.product_id')
+                                      ->whereNull('products.deleted_at')
                                       ->where('carts.id',$user_id)->get();
         return view('home.cart.cart-detail',['cart_detail'=>$cart_detail]);
     }
