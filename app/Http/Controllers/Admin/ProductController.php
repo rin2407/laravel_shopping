@@ -10,7 +10,7 @@ use App\Category;
 use App\Image_product;
 use DB;
 use Illuminate\Support\Str;
-class Productcontroller extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
